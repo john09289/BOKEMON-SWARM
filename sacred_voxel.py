@@ -81,7 +81,7 @@ CARSON_VOXELS = [
     (7, 10, 7, 'light_blue'), (8, 10, 7, 'light_blue'),
     (6, 11, 7, 'light_blue'), (7, 11, 7, 'light_blue'), (8, 11, 7, 'light_blue'), (9, 11, 7, 'light_blue'),
     (6, 12, 7, 'light_blue'), (7, 12, 7, 'light_blue'), (8, 12, 7, 'light_blue'), (9, 12, 7, 'light_blue'),
-    (5, 7, 7, 'gold'), (6, 7, 7, 'gold'), (9, 7, 7, 'gold'), (10, 7, 'gold'),
+    (5, 7, 7, 'gold'), (6, 7, 7, 'gold'), (9, 7, 7, 'gold'), (10, 7, 7, 'gold'),
     (5, 10, 6, 'gold'), (10, 10, 8, 'gold'),
 ]
 

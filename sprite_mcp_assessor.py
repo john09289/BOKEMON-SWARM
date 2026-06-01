@@ -5,7 +5,9 @@ Analyzes and improves voxel sprite quality automatically
 
 import os
 import json
+import sys
 from typing import Dict, List
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from sacred_voxel import generate_sprite, SERAPHIM_VOXELS
 
 def analyze_sprite_quality(sprite_name: str) -> float:
@@ -17,18 +19,24 @@ def analyze_sprite_quality(sprite_name: str) -> float:
     
     pixels = surface.get_width() * surface.get_height()
     
-    unique_colors = len(set(surface.get_pixels()))
+    # Get all pixel colors using get_at
+    unique_colors = set()
+    for x in range(surface.get_width()):
+        for y in range(surface.get_height()):
+            color = surface.get_at((x, y))
+            if color.a > 0:  # Only count non-transparent pixels
+                unique_colors.add((color.r, color.g, color.b))
     
     width = surface.get_width()
     height = surface.get_height()
-    left_half = sum(1 for x in range(width//2) for y in range(height) 
-                   if surface.get_at((x, y)) != (0, 0, 0, 0))
-    right_half = sum(1 for x in range(width//2, width) for y in range(height) 
-                    if surface.get_at((x, y)) != (0, 0, 0, 0))
+    left_half = sum(1 for x in range(width//2) for y in range(height)
+                   if surface.get_at((x, y)).a > 0)
+    right_half = sum(1 for x in range(width//2, width) for y in range(height)
+                     if surface.get_at((x, y)).a > 0)
     
     symmetry_score = 1 - abs(left_half - right_half) / max(left_half + right_half, 1)
     
-    color_score = min(1.0, unique_colors / 10.0)
+    color_score = min(1.0, len(unique_colors) / 10.0)
     
     quality_score = (symmetry_score * 0.4 + color_score * 0.6)
     
