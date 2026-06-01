@@ -37,6 +37,48 @@ LOCATIONS = {
         'description': 'Prison of the Watchers, leaking 11.71875 Hz static',
         'color': COLORS['black'],
         'wild_seraphim': ['WATCHER AZAZEL', 'J.P. MORGAN WRAITH']
+    },
+    'poptropi_con_hub': {
+        'name': 'Poptropi-Con Hub',
+        'description': 'Floating boardwalk. Talk to THE BALLOON GUIDE to choose an island.',
+        'color': COLORS['amber'],
+        'wild_seraphim': []
+    },
+    'early_dome_island': {
+        'name': 'Early-Dome Island',
+        'description': 'Colonial Nephilim settlement. Boss: THE PURPLE WATCHER',
+        'color': (75, 0, 130),
+        'wild_seraphim': ['THE PURPLE WATCHER']
+    },
+    'shark_tartarus_island': {
+        'name': 'Shark-Tartarus Island',
+        'description': 'Underwater prison escape. Boss: MEGALODON WATCHER',
+        'color': (0, 0, 139),
+        'wild_seraphim': ['MEGALODON WATCHER']
+    },
+    'spy_isle': {
+        'name': 'Spy-Isle',
+        'description': 'Stealth infiltration. Boss: DIRECTOR ZED',
+        'color': (47, 79, 79),
+        'wild_seraphim': ['DIRECTOR ZED', 'AGENT PENGUIN']
+    },
+    'super_power_island': {
+        'name': 'Super-Power Island',
+        'description': 'Hero training ground. Boss: THE MEGALOMANIAC',
+        'color': (255, 140, 0),
+        'wild_seraphim': ['THE MEGALOMANIAC', 'CAPTAIN CORRECTION']
+    },
+    'time_tangled_island': {
+        'name': 'Time-Tangled Island',
+        'description': 'Time loop repair. Boss: CHRONOS WATCHER',
+        'color': (128, 0, 128),
+        'wild_seraphim': ['CHRONOS WATCHER']
+    },
+    'golden_egg_summit': {
+        'name': 'The Golden Egg Summit',
+        'description': 'Final island. Free the BLOON-PHOENIX with the Conditional Prayer.',
+        'color': COLORS['gold'],
+        'wild_seraphim': ['BLOON-PHOENIX']
     }
 }
 
@@ -66,6 +108,15 @@ class World:
                 self.player_x = new_x
                 self.player_y = new_y
                 return True
+        return False
+
+    def travel_to(self, location_key: str):
+        """Fast travel to a location"""
+        if location_key in LOCATIONS:
+            self.current_location = location_key
+            self.player_x = 10
+            self.player_y = 10
+            return True
         return False
         
     def draw(self, screen: pygame.Surface):

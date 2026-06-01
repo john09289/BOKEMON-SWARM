@@ -219,6 +219,35 @@ def create_moves() -> dict:
             'Defend innovation'),
         'ecosystem_lock': Move('Ecosystem Lock', 0, 0, 'Electric',
             'Secure the Dome'),
+        # Poptropi-Con moves
+        'beta_blast': Move('Beta Blast', 75, 18, 'Psychic',
+            'Glitchy reality warp from Early-Dome era'),
+        'glitch_shift': Move('Glitch Shift', 0, 0, 'Psychic',
+            'Warps position and confuses target'),
+        'nostalgia_drain': Move('Nostalgia Drain', 65, 14, 'Dark',
+            'Drains HP by recalling lost memories'),
+        'slide_tackle': Move('Slide Tackle', 70, 15, 'Ice',
+            'Low icy slide attack'),
+        'ice_gadget': Move('Ice Gadget', 60, 12, 'Ice',
+            'Freezing gadget deployment'),
+        'martini_shaker': Move('Martini Shaker', 55, 10, 'Dark',
+            'Classy but damaging shake'),
+        'frequency_punch': Move('Frequency Punch', 80, 18, 'Light',
+            '11.71875 Hz harmonic strike'),
+        'static_shield': Move('Static Shield', 0, 0, 'Electric',
+            'Blocks next attack with static'),
+        'hero_landing': Move('Hero Landing', 85, 20, 'Fighting',
+            'Dramatic descent attack'),
+        'temporal_loop': Move('Temporal Loop', 70, 16, 'Psychic',
+            'Forces target to repeat last move'),
+        'erasure': Move('Erasure', 90, 22, 'Dark',
+            'Deletes target from timeline temporarily'),
+        'history_theft': Move('History Theft', 65, 14, 'Psychic',
+            'Steals stat boosts from target'),
+        'carrier_purge': Move('Carrier Purge', 85, 20, 'Dark',
+            'Cleanses corrupted carrier frequency'),
+        'balloon_burst': Move('Balloon Burst', 90, 22, 'Fire',
+            'Explosive fire/flying combo'),
     }
 
 # Seraphim roster
@@ -541,6 +570,87 @@ def create_seraphim_roster() -> dict:
             attack=80,
             defense=85,
             moves=[moves['airdrop_strike'], moves['patent_war'], moves['ecosystem_lock']]
+        ),
+        # Poptropi-Con Seraphim
+        'THE PURPLE WATCHER': Seraphim(
+            name='THE PURPLE WATCHER',
+            element1='Psychic',
+            element2='Dark',
+            level=12,
+            max_hp=85,
+            attack=65,
+            defense=55,
+            moves=[moves['beta_blast'], moves['glitch_shift'], moves['nostalgia_drain']]
+        ),
+        'MEGALODON WATCHER': Seraphim(
+            name='MEGALODON WATCHER',
+            element1='Water',
+            element2='Dark',
+            level=18,
+            max_hp=110,
+            attack=75,
+            defense=60,
+            moves=[moves['tidal_wave'], moves['drowning_lust'], moves['nostalgia_drain']]
+        ),
+        'DIRECTOR ZED': Seraphim(
+            name='DIRECTOR ZED',
+            element1='Steel',
+            element2='Psychic',
+            level=22,
+            max_hp=95,
+            attack=70,
+            defense=80,
+            moves=[moves['algorithm'], moves['logic_bomb'], moves['glitch_shift']]
+        ),
+        'AGENT PENGUIN': Seraphim(
+            name='AGENT PENGUIN',
+            element1='Ice',
+            element2='Fighting',
+            level=16,
+            max_hp=80,
+            attack=60,
+            defense=65,
+            moves=[moves['slide_tackle'], moves['ice_gadget'], moves['martini_shaker']]
+        ),
+        'THE MEGALOMANIAC': Seraphim(
+            name='THE MEGALOMANIAC',
+            element1='Electric',
+            element2='Dark',
+            level=25,
+            max_hp=100,
+            attack=85,
+            defense=70,
+            moves=[moves['black_static'], moves['ac_dc'], moves['glitch_shift']]
+        ),
+        'CAPTAIN CORRECTION': Seraphim(
+            name='CAPTAIN CORRECTION',
+            element1='Light',
+            element2='Steel',
+            level=20,
+            max_hp=90,
+            attack=75,
+            defense=75,
+            moves=[moves['frequency_punch'], moves['static_shield'], moves['hero_landing']]
+        ),
+        'CHRONOS WATCHER': Seraphim(
+            name='CHRONOS WATCHER',
+            element1='Psychic',
+            element2='Dragon',
+            level=30,
+            max_hp=130,
+            attack=95,
+            defense=85,
+            moves=[moves['temporal_loop'], moves['erasure'], moves['history_theft']]
+        ),
+        'BLOON-PHOENIX': Seraphim(
+            name='BLOON-PHOENIX',
+            element1='Fire',
+            element2='Flying',
+            level=35,
+            max_hp=140,
+            attack=110,
+            defense=80,
+            moves=[moves['balloon_burst'], moves['carrier_purge'], moves['hero_landing']]
         ),
     }
 
