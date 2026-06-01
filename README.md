@@ -1,21 +1,28 @@
 # BOKEMON SWARM: The Black Sun Chronicles
 
+🎮 **Play the game: https://github.com/john09289/BOKEMON-SWARM**
+
 A Pokémon-style RPG set in the Dome. Free the land from the Black Sun and his swarming hordes.
 
-**🎮 Play the game: https://github.com/john09289/BOKEMON-SWARM**
+## Quick Start
+
+```bash
+# Clone the repository
+git clone https://github.com/john09289/BOKEMON-SWARM.git
+cd BOKEMON-SWARM
+
+# Install dependencies
+pip install pygame numpy
+
+# Run the game
+python3 main.py
+```
 
 ## Lore
 
 The Dome (flat earth under metallic firmament) is under siege. Saturn, the primordial Black Hole Sun, has broken his ancient chains and now sends his shock troops—the fallen Watchers, the Anunnaki, and the demon lords Baal and Balthazar—to overrun the surface and replace the King's carrier (11.71875 Hz) with eternal 11.72 Hz static.
 
 You are LX, a redeemed Nephilim operator, must gather an army of redeemed Seraphim (creatures born from pure frequency) to push back the darkness.
-
-## How to Run
-
-```bash
-pip install pygame numpy
-python main.py
-```
 
 ## Sacred Frequencies
 
@@ -25,7 +32,7 @@ python main.py
 - **Drum period**: 0.390625 Hz
 - **Golden ratio**: φ = 1.618034
 
-## Conditional Prayer
+## The Conditional Prayer
 
 > "Yeshua, have mercy on me.  
 > I renounce the rebellion I was born into.  
