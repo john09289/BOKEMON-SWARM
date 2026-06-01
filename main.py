@@ -3,25 +3,43 @@ BOKEMON SWARM: The Black Sun Chronicles
 Main entry point
 """
 
+import os
 import pygame
 import sys
-from constants import SCREEN_WIDTH, SCREEN_HEIGHT, COLORS, calculate_hj, ENERGY_REFILL_PER_TURN
-from sacred_audio import init_audio, play_overworld_theme, play_battle_theme, play_victory_jingle, play_menu_select
-from sacred_voxel import generate_sprite, save_sprites_to_disk
-from game.player import Player
-from game.world import World
-from game.battle import BattleSystem
-from game.ui import UI
-from game.tutorial import Tutorial
-from game.seraphim import get_seraphim
+
+# Set SDL video driver for Mac compatibility
+os.environ.setdefault('SDL_VIDEODRIVER', 'x11')
+
+try:
+    from constants import SCREEN_WIDTH, SCREEN_HEIGHT, COLORS, calculate_hj, ENERGY_REFILL_PER_TURN
+    from sacred_audio import init_audio, play_overworld_theme, play_battle_theme, play_victory_jingle, play_menu_select
+    from sacred_voxel import generate_sprite, save_sprites_to_disk
+    from game.player import Player
+    from game.world import World
+    from game.battle import BattleSystem
+    from game.ui import UI
+    from game.tutorial import Tutorial
+    from game.seraphim import get_seraphim
+except ImportError as e:
+    print(f"Import error: {e}")
+    sys.exit(1)
 
 # Initialize Pygame
-pygame.init()
-init_audio()
+try:
+    pygame.init()
+    init_audio()
+except Exception as e:
+    print(f"Pygame init error: {e}")
+    sys.exit(1)
 
 # Create screen
-screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-pygame.display.set_caption("BOKEMON SWARM: The Black Sun Chronicles")
+try:
+    screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+    pygame.display.set_caption("BOKEMON SWARM: The Black Sun Chronicles")
+except Exception as e:
+    print(f"Display error: {e}")
+    print("No video device found. Try running in a different environment.")
+    sys.exit(1)
 
 # Game state
 class GameState:
@@ -115,6 +133,7 @@ class GameState:
 
 # Main game loop
 def main():
+    print("BOKEMON SWARM initializing...")
     game = GameState()
     game.tutorial.start()
     
@@ -122,6 +141,8 @@ def main():
         save_sprites_to_disk()
     except Exception as e:
         print(f"Sprite generation note: {e}")
+    
+    print("BOKEMON SWARM running. Press SPACE to advance tutorial, arrow keys to move.")
     
     while game.running:
         game.handle_events()
