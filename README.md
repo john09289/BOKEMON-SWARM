@@ -1,6 +1,6 @@
 # BOKEMON SWARM: The Black Sun Chronicles
 
-🎮 **Play the game: https://github.com/john09289/BOKEMON-SWARM**
+🎮 **Play BOKEMON-SWARM live in your browser:** [https://john09289.github.io/BOKEMON-SWARM](https://john09289.github.io/BOKEMON-SWARM)
 
 A Pokémon-style RPG set in the Dome. Free the land from the Black Sun and his swarming hordes.
 
@@ -62,8 +62,21 @@ You are LX, a redeemed Nephilim operator, must gather an army of redeemed Seraph
 
 - **Arrow Keys** - Move
 - **SPACE** - Interact/Confirm
+- **E** - Interact with NPCs / enter locations
+- **M** - Map / fast travel menu
 - **W** - Carrier Lock (when prompted)
 - **ESC** - Menu
+
+## Poptropi-Con Isles
+
+A new side-story area accessible from the **Pittsboro Nexus** via **THE BALLOON GUIDE**.
+
+1. **Early-Dome Island** — Boss: THE PURPLE WATCHER (Psychic/Dark). Reward: Golden Egg.
+2. **Shark-Tartarus Island** — Boss: MEGALODON WATCHER (Water/Dark).
+3. **Spy-Isle** — Boss: DIRECTOR ZED (Steel/Psychic). Recruit AGENT PENGUIN.
+4. **Super-Power Island** — Boss: THE MEGALOMANIAC (Electric/Dark). Recruit CAPTAIN CORRECTION.
+5. **Time-Tangled Island** — Boss: CHRONOS WATCHER (Psychic/Dragon).
+6. **The Golden Egg Summit** — Free the BLOON-PHOENIX (Fire/Flying) with the Conditional Prayer.
 
 ## Note
 
