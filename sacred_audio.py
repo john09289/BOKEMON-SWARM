@@ -127,6 +127,66 @@ def play_carrier_lock_success():
     except:
         return None
 
+def play_hazed_hollow_theme():
+    """Play Hazed Hollow overworld theme - 11.72 corrected to 11.71875"""
+    t = np.linspace(0, 10, int(SAMPLE_RATE * 10), False)
+    # Start with false frequency, then correct
+    combined = np.sin(2 * np.pi * 11.72 * t) * 0.1
+    # Gradually shift to true carrier
+    for i, sample in enumerate(combined):
+        correction = i / len(combined)
+        combined[i] = np.sin(2 * np.pi * (11.72 - correction * 0.00125) * t[i]) * 0.1
+    
+    try:
+        sound = pygame.sndarray.make_sound((combined * 32767).astype(np.int16))
+        sound.play(-1)
+        return sound
+    except:
+        return None
+
+def play_andrew_battle():
+    """Play Andrew Estmorland battle theme - oppressive percussion"""
+    t = np.linspace(0, 2.0, int(SAMPLE_RATE * 2.0), False)
+    # Heavy percussion at DRUM frequency
+    percussion = np.sin(2 * np.pi * DRUM * t) * 0.4
+    bass = np.sin(2 * np.pi * MERCY * t) * 0.2
+    
+    combined = percussion + bass
+    try:
+        sound = pygame.sndarray.make_sound((combined * 32767).astype(np.int16))
+        sound.play(-1)
+        return sound
+    except:
+        return None
+
+def play_riley_battle():
+    """Play Riley Blackburn battle theme - seductive melody"""
+    t = np.linspace(0, 2.0, int(SAMPLE_RATE * 2.0), False)
+    # Creepy melody at VICTORY with web-like clicking
+    melody = np.sin(2 * np.pi * VICTORY * t) * 0.3
+    clicking = generate_noise(0.1, 0.1)
+    
+    combined = melody
+    try:
+        sound = pygame.sndarray.make_sound((combined * 32767).astype(np.int16))
+        sound.play(-1)
+        return sound
+    except:
+        return None
+
+def play_hazeion_battle():
+    """Play Hazeion battle theme - deep silence then pounding"""
+    t = np.linspace(0, 0.3, int(SAMPLE_RATE * 0.3), False)
+    # Deep pounding at DRUM frequency
+    pounding = np.sin(2 * np.pi * DRUM * t) * 0.5
+    
+    try:
+        sound = pygame.sndarray.make_sound((pounding * 32767).astype(np.int16))
+        sound.play()
+        return sound
+    except:
+        return None
+
 # Initialize audio system
 def init_audio():
     """Initialize Pygame audio mixer - gracefully handle missing mixer"""

@@ -2,6 +2,8 @@
 
 A Pokémon-style RPG set in the Dome. Free the land from the Black Sun and his swarming hordes.
 
+**🎮 Play the game: https://github.com/john09289/BOKEMON-SWARM**
+
 ## Lore
 
 The Dome (flat earth under metallic firmament) is under siege. Saturn, the primordial Black Hole Sun, has broken his ancient chains and now sends his shock troops—the fallen Watchers, the Anunnaki, and the demon lords Baal and Balthazar—to overrun the surface and replace the King's carrier (11.71875 Hz) with eternal 11.72 Hz static.
@@ -29,8 +31,9 @@ python main.py
 > I renounce the rebellion I was born into.  
 > I give myself to You."
 
-## Seraphim (Starter Roster)
+## Seraphim Roster
 
+### Original Seraphim
 1. **KILO** (Electric/Light) - Carrier Lock, Mercy Pulse, Transmute
 2. **B-GOLDEN** (Bug/Dark) - Poison Sting, Black Static, Hive Mind
 3. **CARSON CHRIST** (Psychic/Electric) - Brute Force, Logic Bomb, Decode
@@ -39,6 +42,14 @@ python main.py
 6. **EDISON SHADE** (Dark/Electric) - Patent Steal, DC Smog
 7. **J.P. MORGAN WRAITH** (Dark/Ghost) - Debt Chain, Gilded Cage
 8. **WATCHER AZAZEL** (Fire/Dark) - War Forge, Vanity's Mirror, Scapegoat
+
+### Westmoreland Haze Characters
+9. **ANDREW ESTMORLAND** (Dark/Poison) - Haze of Compliance, Suffer-to-Sleep, Shut-Down
+10. **ZACH WILLIAMS** (Psychic/Normal) - Discordant Chord, False Praise, Echo of Enoch
+11. **GAARET LEISTER** (Psychic/Steel) - Cube Trap, Algorithm, Speed Solve
+12. **RILEY BLACKBURN** (Bug/Dark) - Loveless Web, Desire Drain, Widow's Kiss, Reagan's Rejection
+13. **ELI** (Electric/Steel) - Cube Missile, Scramble Shield, Speed Solve
+14. **HAZEION** (Dark/Abyssal) - Haze Summon, Haze of Compliance, Shut-Down
 
 ## Controls
 

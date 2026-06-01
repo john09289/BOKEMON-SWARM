@@ -75,6 +75,38 @@ def create_moves() -> dict:
             'Reflects enemy pride'),
         'scapegoat': Move('Scapegoat', 0, 0, 'Dark',
             'Takes enemy status effects'),
+        'haze_compliance': Move('Haze of Compliance', 70, 15, 'Dark',
+            'Oppressive fog that drains will'),
+        'suffer_to_sleep': Move('Suffer-to-Sleep', 0, 0, 'Dark',
+            'Puts target to sleep with ongoing damage'),
+        'shut_down': Move('Shut-Down', 80, 20, 'Dark',
+            'Complete mental shutdown'),
+        'discordant_chord': Move('Discordant Chord', 65, 15, 'Psychic',
+            'False praise that spreads static'),
+        'false_praise': Move('False Praise', 50, 10, 'Normal',
+            'Lures with deceptive melody'),
+        'echo_of_enoch': Move('Echo of Enoch', 75, 18, 'Psychic',
+            'Ancient knowledge blast'),
+        'cube_trap': Move('Cube Trap', 60, 12, 'Psychic',
+            'Confuses target with patterns'),
+        'algorithm': Move('Algorithm', 85, 20, 'Steel',
+            'Predicts and counters moves'),
+        'speed_solve': Move('Speed Solve', 0, 0, 'Psychic',
+            'Solves cube to boost stats'),
+        'loveless_web': Move('Loveless Web', 55, 12, 'Bug',
+            'Ensnares with empty desire'),
+        'desire_drain': Move('Desire Drain', 70, 15, 'Dark',
+            'Drains Energy Bank'),
+        'widows_kiss': Move('Widow\'s Kiss', 65, 14, 'Dark',
+            'Bitter embrace'),
+        'reagans_rejection': Move('Reagan\'s Rejection', 0, 0, 'Dark',
+            'Self-harming move of denial'),
+        'cube_missile': Move('Cube Missile', 80, 18, 'Electric',
+            'Launching rotating blocks'),
+        'scramble_shield': Move('Scramble Shield', 0, 0, 'Steel',
+            'Defends with shifting cubes'),
+        'haze_summon': Move('Haze Summon', 90, 25, 'Dark',
+            'Calls Hazeion to battle'),
     }
 
 # Seraphim roster
@@ -164,6 +196,67 @@ def create_seraphim_roster() -> dict:
             attack=120,
             defense=90,
             moves=[moves['war_forge'], moves['vanity_mirror'], moves['scapegoat']]
+        ),
+        # Westmoreland Haze characters
+        'ANDREW ESTMORLAND': Seraphim(
+            name='ANDREW ESTMORLAND',
+            element1='Dark',
+            element2='Poison',
+            level=18,
+            max_hp=110,
+            attack=75,
+            defense=70,
+            moves=[moves['haze_compliance'], moves['suffer_to_sleep'], moves['shut_down']]
+        ),
+        'ZACH WILLIAMS': Seraphim(
+            name='ZACH WILLIAMS',
+            element1='Psychic',
+            element2='Normal',
+            level=16,
+            max_hp=85,
+            attack=60,
+            defense=65,
+            moves=[moves['discordant_chord'], moves['false_praise'], moves['echo_of_enoch']]
+        ),
+        'GAARET LEISTER': Seraphim(
+            name='GAARET LEISTER',
+            element1='Psychic',
+            element2='Steel',
+            level=22,
+            max_hp=95,
+            attack=70,
+            defense=80,
+            moves=[moves['cube_trap'], moves['algorithm'], moves['speed_solve']]
+        ),
+        'RILEY BLACKBURN': Seraphim(
+            name='RILEY BLACKBURN',
+            element1='Bug',
+            element2='Dark',
+            level=20,
+            max_hp=90,
+            attack=75,
+            defense=65,
+            moves=[moves['loveless_web'], moves['desire_drain'], moves['widows_kiss'], moves['reagans_rejection']]
+        ),
+        'ELI': Seraphim(
+            name='ELI',
+            element1='Electric',
+            element2='Steel',
+            level=24,
+            max_hp=100,
+            attack=85,
+            defense=80,
+            moves=[moves['cube_missile'], moves['scramble_shield'], moves['speed_solve']]
+        ),
+        'HAZEION': Seraphim(
+            name='HAZEION',
+            element1='Dark',
+            element2='Abyssal',
+            level=40,
+            max_hp=180,
+            attack=100,
+            defense=100,
+            moves=[moves['haze_summon'], moves['haze_compliance'], moves['shut_down']]
         ),
     }
 

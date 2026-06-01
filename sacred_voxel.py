@@ -137,6 +137,74 @@ AZAZEL_VOXELS = [
     (4, 10, 6, 'black'), (5, 10, 6, 'black'), (10, 10, 8, 'black'), (11, 10, 8, 'black'),
 ]
 
+# ANDREW ESTMORLAND - Dark/Poison
+ANDREW_VOXELS = [
+    (6, 10, 6, 'grey'), (7, 10, 6, 'grey'), (8, 10, 6, 'grey'), (9, 10, 6, 'grey'),
+    (5, 11, 6, 'grey'), (6, 11, 6, 'grey'), (7, 11, 6, 'grey'), (8, 11, 6, 'grey'),
+    (9, 11, 6, 'grey'), (10, 11, 6, 'grey'),
+    (5, 12, 6, 'grey'), (6, 12, 6, 'grey'), (7, 12, 6, 'grey'), (8, 12, 6, 'grey'),
+    (9, 12, 6, 'grey'), (10, 12, 6, 'grey'),
+    (6, 13, 6, 'grey'), (7, 13, 6, 'grey'), (8, 13, 6, 'grey'), (9, 13, 6, 'grey'),
+    (7, 14, 6, 'grey'), (8, 14, 6, 'grey'),
+    (7, 11, 5, 'purple'), (8, 11, 7, 'purple'),
+]
+
+# ZACH WILLIAMS - Psychic/Normal
+ZACH_VOXELS = [
+    (7, 8, 7, 'light_blue'), (8, 8, 7, 'light_blue'),
+    (6, 9, 7, 'light_blue'), (7, 9, 7, 'light_blue'), (8, 9, 7, 'light_blue'), (9, 9, 7, 'light_blue'),
+    (7, 10, 7, 'light_blue'), (8, 10, 7, 'light_blue'),
+    (6, 11, 7, 'light_blue'), (7, 11, 7, 'light_blue'), (8, 11, 7, 'light_blue'), (9, 11, 7, 'light_blue'),
+    (5, 12, 7, 'white'), (6, 12, 7, 'white'), (7, 12, 7, 'white'), (8, 12, 7, 'white'),
+    (9, 12, 7, 'white'), (10, 12, 7, 'white'),
+]
+
+# GAARET LEISTER - Psychic/Steel
+GAARET_VOXELS = [
+    (7, 8, 7, 'light_blue'), (8, 8, 7, 'light_blue'),
+    (6, 9, 7, 'grey'), (7, 9, 7, 'grey'), (8, 9, 7, 'grey'), (9, 9, 7, 'grey'),
+    (7, 10, 7, 'grey'), (8, 10, 7, 'grey'),
+    (6, 11, 7, 'grey'), (7, 11, 7, 'grey'), (8, 11, 7, 'grey'), (9, 11, 7, 'grey'),
+    (5, 12, 7, 'white'), (6, 12, 7, 'white'), (7, 12, 7, 'white'), (8, 12, 7, 'white'),
+    (9, 12, 7, 'white'), (10, 12, 7, 'white'),
+]
+
+# RILEY BLACKBURN - Bug/Dark
+RILEY_VOXELS = [
+    (6, 10, 6, 'black'), (7, 10, 6, 'black'), (8, 10, 6, 'black'), (9, 10, 6, 'black'),
+    (5, 11, 6, 'black'), (6, 11, 6, 'black'), (7, 11, 6, 'black'), (8, 11, 6, 'black'),
+    (9, 11, 6, 'black'), (10, 11, 6, 'black'),
+    (5, 12, 6, 'black'), (6, 12, 6, 'black'), (7, 12, 6, 'black'), (8, 12, 6, 'black'),
+    (9, 12, 6, 'black'), (10, 12, 6, 'black'),
+    (6, 13, 6, 'black'), (7, 13, 6, 'black'), (8, 13, 6, 'black'), (9, 13, 6, 'black'),
+    (7, 14, 6, 'black'), (8, 14, 6, 'black'),
+    (7, 11, 5, 'red'), (8, 11, 7, 'red'),
+]
+
+# ELI - Electric/Steel
+ELI_VOXELS = [
+    (6, 10, 6, 'grey'), (7, 10, 6, 'grey'), (8, 10, 6, 'grey'), (9, 10, 6, 'grey'),
+    (5, 11, 6, 'grey'), (6, 11, 6, 'grey'), (7, 11, 6, 'grey'), (8, 11, 6, 'grey'),
+    (9, 11, 6, 'grey'), (10, 11, 6, 'grey'),
+    (5, 12, 6, 'grey'), (6, 12, 6, 'grey'), (7, 12, 6, 'grey'), (8, 12, 6, 'grey'),
+    (9, 12, 6, 'grey'), (10, 12, 6, 'grey'),
+    (6, 13, 6, 'grey'), (7, 13, 6, 'grey'), (8, 13, 6, 'grey'), (9, 13, 6, 'grey'),
+    (7, 14, 6, 'grey'), (8, 14, 6, 'grey'),
+    (7, 11, 5, 'blue_core'), (8, 11, 7, 'blue_core'),
+]
+
+# HAZEION - Dark/Abyssal
+HAZEION_VOXELS = [
+    (6, 10, 6, 'dark_purple'), (7, 10, 6, 'dark_purple'), (8, 10, 6, 'dark_purple'), (9, 10, 6, 'dark_purple'),
+    (5, 11, 6, 'dark_purple'), (6, 11, 6, 'dark_purple'), (7, 11, 6, 'dark_purple'), (8, 11, 6, 'dark_purple'),
+    (9, 11, 6, 'dark_purple'), (10, 11, 6, 'dark_purple'),
+    (5, 12, 6, 'dark_purple'), (6, 12, 6, 'dark_purple'), (7, 12, 6, 'dark_purple'), (8, 12, 6, 'dark_purple'),
+    (9, 12, 6, 'dark_purple'), (10, 12, 6, 'dark_purple'),
+    (6, 13, 6, 'dark_purple'), (7, 13, 6, 'dark_purple'), (8, 13, 6, 'dark_purple'), (9, 13, 6, 'dark_purple'),
+    (7, 14, 6, 'dark_purple'), (8, 14, 6, 'dark_purple'),
+    (7, 11, 5, 'black'), (8, 11, 7, 'black'),
+]
+
 # All Seraphim voxel models
 SERAPHIM_VOXELS = {
     'KILO': KILO_VOXELS,
@@ -147,6 +215,12 @@ SERAPHIM_VOXELS = {
     'EDISON SHADE': EDISON_VOXELS,
     'J.P. MORGAN WRAITH': MORGAN_VOXELS,
     'WATCHER AZAZEL': AZAZEL_VOXELS,
+    'ANDREW ESTMORLAND': ANDREW_VOXELS,
+    'ZACH WILLIAMS': ZACH_VOXELS,
+    'GAARET LEISTER': GAARET_VOXELS,
+    'RILEY BLACKBURN': RILEY_VOXELS,
+    'ELI': ELI_VOXELS,
+    'HAZEION': HAZEION_VOXELS,
 }
 
 def generate_sprite(name: str, angle: float = 0) -> pygame.Surface:
