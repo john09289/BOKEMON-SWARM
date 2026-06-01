@@ -3,12 +3,8 @@ BOKEMON SWARM: The Black Sun Chronicles
 Main entry point
 """
 
-import os
 import pygame
 import sys
-
-# Set SDL video driver for Mac compatibility
-os.environ.setdefault('SDL_VIDEODRIVER', 'x11')
 
 try:
     from constants import SCREEN_WIDTH, SCREEN_HEIGHT, COLORS, calculate_hj, ENERGY_REFILL_PER_TURN
