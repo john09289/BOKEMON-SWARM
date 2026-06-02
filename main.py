@@ -88,6 +88,7 @@ class GameState:
         self.poptropi_con_unlocked = False
         self.golden_egg = False
         self.bloon_phoenix_captured = False
+        self.started = False
         
     def start_battle(self, enemy_name: str):
         """Start a battle with the given enemy"""
@@ -123,6 +124,7 @@ class GameState:
                         if self.tutorial.completed:
                             self.player.add_seraphim("KILO")
                             self.state = "overworld"
+                            self.started = True
                             if AUDIO_AVAILABLE:
                                 play_overworld_theme()
                             log("Tutorial complete, entered overworld")
@@ -224,13 +226,22 @@ class GameState:
                 self.ui.draw_hud(screen, self.player, self.player.active_seraphim)
                 self.ui.show_dialogue("PAUSED - ESC to resume")
                 self.ui.draw_dialogue(screen)
-                
-            # Draw debug overlay
+            
+            # Always draw debug overlay on top
             debug.draw(screen)
             
             pygame.display.flip()
         except Exception as e:
             log(f"Draw error: {e}")
+            # Try to show error on screen
+            try:
+                screen.fill((50, 0, 0))
+                if debug.font:
+                    text = debug.font.render(f"Draw Error: {e}", True, (255, 100, 100))
+                    screen.blit(text, (50, SCREEN_HEIGHT // 2))
+                    pygame.display.flip()
+            except:
+                pass
 
 # Main game loop
 async def main():

@@ -1,0 +1,66 @@
+[
+  {
+    "type": "warning",
+    "text": "Unrecognized feature: 'monetization'."
+  },
+  {
+    "type": "warning",
+    "text": "Unrecognized feature: 'xr'."
+  },
+  {
+    "type": "warning",
+    "text": "Allow attribute will take precedence over 'allowfullscreen'."
+  },
+  {
+    "type": "warning",
+    "text": "Connection: Wired"
+  },
+  {
+    "type": "warning",
+    "text": "\n\n\n== FLAGS : is_mobile(false) dev=false debug_user=false debug_mobile=false ==\n\n\n\n"
+  },
+  {
+    "type": "warning",
+    "text": "vtx font: 720 / 52 = 9  Cols: 132 Cons: 10"
+  },
+  {
+    "type": "warning",
+    "text": "terminal 132 52 {url: https://pygame-web.github.io/cdn/0.9.3/xtermjsixel/xterm-addon-image-worker.js, sixelSupport: true}"
+  },
+  {
+    "type": "warning",
+    "text": "NO ume unlocker, safari == false"
+  },
+  {
+    "type": "warning",
+    "text": "TODO: user defined canvas"
+  },
+  {
+    "type": "warning",
+    "text": "Loading python interpreter from https://pygame-web.github.io/cdn/0.9.3/cpython312/main.js"
+  },
+  {
+    "type": "warning",
+    "text": "VM.prerun:Begin"
+  },
+  {
+    "type": "warning",
+    "text": "VM.prerun:End"
+  },
+  {
+    "type": "error",
+    "text": "PyMain: BrowserFS not found"
+  },
+  {
+    "type": "warning",
+    "text": "VM.postrun Begin"
+  },
+  {
+    "type": "warning",
+    "text": "VM.postrun End"
+  },
+  {
+    "type": "info",
+    "text": "Canvas element found."
+  }
+]
