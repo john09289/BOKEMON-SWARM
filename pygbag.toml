@@ -1,5 +1,5 @@
 [build]
-include = ["assets/**/*.png", "data/**/*.json"]
+include = ["assets/**/*.png", "data/**/*.json", "web_assets/**/*", "vtx.js"]
 
 [web]
 title = "BOKEMON-SWARM"
