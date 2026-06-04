@@ -204,6 +204,49 @@ def play_heidi_encounter():
     except:
         return None
 
+def play_island_theme(music_style: str):
+    """Play an island-specific ambient theme based on music_style"""
+    t = np.linspace(0, 8.0, int(SAMPLE_RATE * 8.0), False)
+    drone = np.sin(2 * np.pi * CARRIER * t) * 0.1
+    
+    style_map = {
+        "mysterious": (MERCY * 1.5, VICTORY * 0.5),
+        "underwater": (CARRIER * 0.5, MERCY * 0.8),
+        "temporal": (VICTORY * 0.7, CARRIER * 1.2),
+        "stealth": (DRUM * 2, MERCY * 0.3),
+        "heroic": (VICTORY, MERCY * 1.5),
+        "pirate": (CARRIER * 0.8, VICTORY * 0.6),
+        "space": (MERCY * 0.5, VICTORY * 1.5),
+        "creepy": (DRUM * 3, CARRIER * 0.3),
+        "western": (CARRIER * 1.5, DRUM * 1.5),
+        "industrial": (DRUM * 4, CARRIER * 0.5),
+        "ancient": (MERCY * 2, VICTORY * 0.3),
+        "epic": (VICTORY * 1.5, MERCY),
+        "techno": (DRUM * 5, VICTORY * 0.8),
+        "horror": (DRUM * 2, MERCY * 0.2),
+        "triumph": (VICTORY * 2, MERCY * 2),
+        "elegant": (VICTORY * 0.8, MERCY * 1.2),
+        "prehistoric": (DRUM * 1.5, CARRIER * 0.7),
+        "dreamy": (MERCY * 0.7, VICTORY * 0.4),
+        "intense": (DRUM * 3, VICTORY),
+        "tropical": (MERCY * 1.8, CARRIER * 0.6),
+        "halloween": (DRUM * 2.5, MERCY * 0.4),
+        "action": (DRUM * 4, VICTORY * 0.9),
+        "default": (MERCY, VICTORY * 0.5)
+    }
+    
+    freq1, freq2 = style_map.get(music_style, style_map["default"])
+    layer1 = np.sin(2 * np.pi * freq1 * t) * 0.2
+    layer2 = np.sin(2 * np.pi * freq2 * t) * 0.15
+    combined = drone + layer1 + layer2
+    
+    try:
+        sound = pygame.sndarray.make_sound((combined * 32767).astype(np.int16))
+        sound.play(-1)
+        return sound
+    except:
+        return None
+
 # Initialize audio system
 def init_audio():
     """Initialize Pygame audio mixer - gracefully handle missing mixer"""

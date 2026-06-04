@@ -4,9 +4,12 @@ Top-down 2D tile-based world
 """
 
 import pygame
+import json
+import os
 from typing import Dict, Optional
 from constants import SCREEN_WIDTH, SCREEN_HEIGHT, TILE_SIZE, COLORS
 
+# Core locations (always present)
 LOCATIONS = {
     'pittsboro_nexus': {
         'name': 'Pittsboro Nexus',
@@ -40,45 +43,9 @@ LOCATIONS = {
     },
     'poptropi_con_hub': {
         'name': 'Poptropi-Con Hub',
-        'description': 'Floating boardwalk. Talk to THE BALLOON GUIDE to choose an island.',
+        'description': 'Floating boardwalk. Portals to all Poptropica islands.',
         'color': COLORS['amber'],
         'wild_seraphim': []
-    },
-    'early_dome_island': {
-        'name': 'Early-Dome Island',
-        'description': 'Colonial Nephilim settlement. Boss: THE PURPLE WATCHER',
-        'color': (75, 0, 130),
-        'wild_seraphim': ['THE PURPLE WATCHER']
-    },
-    'shark_tartarus_island': {
-        'name': 'Shark-Tartarus Island',
-        'description': 'Underwater prison escape. Boss: MEGALODON WATCHER',
-        'color': (0, 0, 139),
-        'wild_seraphim': ['MEGALODON WATCHER']
-    },
-    'spy_isle': {
-        'name': 'Spy-Isle',
-        'description': 'Stealth infiltration. Boss: DIRECTOR ZED',
-        'color': (47, 79, 79),
-        'wild_seraphim': ['DIRECTOR ZED', 'AGENT PENGUIN']
-    },
-    'super_power_island': {
-        'name': 'Super-Power Island',
-        'description': 'Hero training ground. Boss: THE MEGALOMANIAC',
-        'color': (255, 140, 0),
-        'wild_seraphim': ['THE MEGALOMANIAC', 'CAPTAIN CORRECTION']
-    },
-    'time_tangled_island': {
-        'name': 'Time-Tangled Island',
-        'description': 'Time loop repair. Boss: CHRONOS WATCHER',
-        'color': (128, 0, 128),
-        'wild_seraphim': ['CHRONOS WATCHER']
-    },
-    'golden_egg_summit': {
-        'name': 'The Golden Egg Summit',
-        'description': 'Final island. Free the BLOON-PHOENIX with the Conditional Prayer.',
-        'color': COLORS['gold'],
-        'wild_seraphim': ['BLOON-PHOENIX']
     },
     'gymnasts_hollow': {
         'name': "Gymnast's Hollow",
@@ -87,6 +54,35 @@ LOCATIONS = {
         'wild_seraphim': ['HEIDI ANDERSON CHRIST']
     }
 }
+
+def load_poptropica_islands():
+    """Load generated Poptropica islands from data/islands/"""
+    islands_dir = "data/islands"
+    if not os.path.exists(islands_dir):
+        return {}
+    
+    islands = {}
+    for filename in os.listdir(islands_dir):
+        if filename.endswith('.json'):
+            filepath = os.path.join(islands_dir, filename)
+            with open(filepath, 'r') as f:
+                island_data = json.load(f)
+            island_id = island_data['id']
+            islands[island_id] = {
+                'name': island_data['name'],
+                'description': f"Boss: {island_data['boss']['name']}. Seraphim: {island_data['seraphim']['name']}",
+                'color': tuple(island_data['tile_map'][0][0]) if island_data.get('tile_map') else (100, 100, 100),
+                'wild_seraphim': [island_data['seraphim']['name']],
+                'boss': island_data['boss'],
+                'seraphim': island_data['seraphim'],
+                'music_style': island_data.get('music_style', 'mysterious'),
+                'unlocks': island_data.get('unlocks', [])
+            }
+    return islands
+
+# Merge generated islands into LOCATIONS
+POPTRopica_ISLANDS = load_poptropica_islands()
+LOCATIONS.update(POPTRopica_ISLANDS)
 
 class World:
     def __init__(self):
