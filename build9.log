@@ -1,0 +1,362 @@
+WARNING: wasm mimetype unsupported on that system, trying to correct
+Traceback (most recent call last):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/nicholashughes/Library/Python/3.9/lib/python/site-packages/pygbag/__main__.py", line 289, in <module>
+    asyncio.run(import_site())
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/asyncio/base_events.py", line 642, in run_until_complete
+    return future.result()
+  File "/Users/nicholashughes/Library/Python/3.9/lib/python/site-packages/pygbag/__main__.py", line 23, in import_site
+    await main_run(app_folder, mainscript)
+  File "/Users/nicholashughes/Library/Python/3.9/lib/python/site-packages/pygbag/app.py", line 595, in main_run
+    testserver.run_code_server(args, CC)
+  File "/Users/nicholashughes/Library/Python/3.9/lib/python/site-packages/pygbag/testserver.py", line 351, in run_code_server
+    code_server(HandlerClass=handler_class, port=args.port, bind=args.bind, ssl=ssl)
+  File "/Users/nicholashughes/Library/Python/3.9/lib/python/site-packages/pygbag/testserver.py", line 292, in code_server
+    with ServerClass(server_address, HandlerClass) as httpd:
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 452, in __init__
+    self.server_bind()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 138, in server_bind
+    socketserver.TCPServer.server_bind(self)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 466, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [Errno 48] Address already in use
+ *pygbag 0.9.3*
+
+Serving python files from [/Users/nicholashughes/Documents/BOKEMON-SWARM/build/web]
+
+with no security/performance in mind, i'm just a test tool : don't rely on me
+
+
+SUMMARY
+________________________
+
+# the app folder
+app_folder=/Users/nicholashughes/Documents/BOKEMON-SWARM
+
+# artefacts directory
+build_dir=/Users/nicholashughes/Documents/BOKEMON-SWARM/build/web
+
+# cache directory
+cache=/Users/nicholashughes/Documents/BOKEMON-SWARM/build/web-cache
+
+# the window title and icon name
+app_name=bokemon-swarm
+
+# package name, better make it unique
+package=web.pygame.BOKEMON-SWARM-1780601816
+
+# icons:  96x96 for desktop, 16x16 for web
+icon=favicon.png
+
+# js/wasm provider
+cdn=https://pygame-web.github.io/cdn/0.9.3/
+
+now packing application ....
+
+
+WARNING: No pygbag.ini found! See: https://pygame-web.github.io/wiki/pygbag-configuration
+Ignored dirs: []
+Ignored files: []
+Now in /
+     /run_with_log.py
+     /custom.tmpl
+     /bokemon-swarm.tar.gz
+     /loading_screen.py
+     /index.html
+     /debug_report.json
+     /tiktok_scraper.py
+     /constants.py
+     /bokemon-swarm.apk
+     /generate_sprites.py
+     /debug_overlay.py
+     /sprite_mcp_assessor.py
+     /README.md
+     /favicon.png
+     /generate_state_champions.py
+     /debug_web.py
+     /sacred_voxel.py
+     /pygbag.toml
+     /main.py
+     /sacred_audio.py
+Now in /game
+     /game/asylum.py
+     /game/meme_factory.py
+     /game/world.py
+     /game/colosseum.py
+     /game/tutorial.py
+     /game/ui.py
+     /game/__init__.py
+     /game/hyperculture.py
+     /game/player.py
+     /game/hazed_hollow.py
+     /game/seraphim.py
+     /game/battle.py
+Now in /web_assets
+     /web_assets/pythons.js
+     /web_assets/browserfs.min.js
+Now in /data
+     /data/states_and_countries.json
+Now in /assets/sprites
+     /assets/sprites/ZACH_WILLIAMS_90.png
+     /assets/sprites/GAARET_LEISTER_90.png
+     /assets/sprites/WATCHER_AZAZEL_0.png
+     /assets/sprites/KILO_270.png
+     /assets/sprites/GAARET_LEISTER_270.png
+     /assets/sprites/HAZEION_90.png
+     /assets/sprites/EDISON_SHADE_90.png
+     /assets/sprites/CARSON_CHRIST_270.png
+     /assets/sprites/ANDREW_ESTMORLAND_180.png
+     /assets/sprites/ANDREW_ESTMORLAND_0.png
+     /assets/sprites/EDISON_SHADE_180.png
+     /assets/sprites/J.P._MORGAN_WRAITH_270.png
+     /assets/sprites/B-GOLDEN_270.png
+     /assets/sprites/HEIDI_ANDERSON_CHRIST_0.png
+     /assets/sprites/HEIDI_ANDERSON_CHRIST_180.png
+     /assets/sprites/ELI_180.png
+     /assets/sprites/WATCHER_AZAZEL_180.png
+     /assets/sprites/ZACH_WILLIAMS_0.png
+     /assets/sprites/KILO_90.png
+     /assets/sprites/RILEY_BLACKBURN_270.png
+     /assets/sprites/B-GOLDEN_90.png
+     /assets/sprites/ZACH_WILLIAMS_270.png
+     /assets/sprites/RILEY_BLACKBURN_0.png
+     /assets/sprites/EDISON_SHADE_0.png
+     /assets/sprites/J.P._MORGAN_WRAITH_0.png
+     /assets/sprites/GAARET_LEISTER_0.png
+     /assets/sprites/MAKINDRAN_270.png
+     /assets/sprites/MAKINDRAN_90.png
+     /assets/sprites/HEIDI_ANDERSON_CHRIST_90.png
+     /assets/sprites/NIKOLA_TESLA_180.png
+     /assets/sprites/CARSON_CHRIST_90.png
+     /assets/sprites/HAZEION_270.png
+     /assets/sprites/MAKINDRAN_0.png
+     /assets/sprites/EDISON_SHADE_270.png
+     /assets/sprites/CARSON_CHRIST_180.png
+     /assets/sprites/ANDREW_ESTMORLAND_270.png
+     /assets/sprites/J.P._MORGAN_WRAITH_180.png
+     /assets/sprites/B-GOLDEN_180.png
+     /assets/sprites/ELI_0.png
+     /assets/sprites/J.P._MORGAN_WRAITH_90.png
+     /assets/sprites/WATCHER_AZAZEL_90.png
+     /assets/sprites/GAARET_LEISTER_180.png
+     /assets/sprites/KILO_180.png
+     /assets/sprites/MAKINDRAN_180.png
+     /assets/sprites/RILEY_BLACKBURN_90.png
+     /assets/sprites/KILO_0.png
+     /assets/sprites/HAZEION_180.png
+     /assets/sprites/NIKOLA_TESLA_90.png
+     /assets/sprites/ANDREW_ESTMORLAND_90.png
+     /assets/sprites/NIKOLA_TESLA_270.png
+     /assets/sprites/B-GOLDEN_0.png
+     /assets/sprites/HAZEION_0.png
+     /assets/sprites/ELI_270.png
+     /assets/sprites/HEIDI_ANDERSON_CHRIST_270.png
+     /assets/sprites/WATCHER_AZAZEL_270.png
+     /assets/sprites/ZACH_WILLIAMS_180.png
+     /assets/sprites/CARSON_CHRIST_0.png
+     /assets/sprites/RILEY_BLACKBURN_180.png
+     /assets/sprites/NIKOLA_TESLA_0.png
+     /assets/sprites/ELI_90.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : run_with_log.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : custom.tmpl
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : bokemon-swarm.tar.gz
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : loading_screen.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : index.html
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : debug_report.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : tiktok_scraper.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : constants.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : bokemon-swarm.apk
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : generate_sprites.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : debug_overlay.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : sprite_mcp_assessor.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : README.md
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : favicon.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : generate_state_champions.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : debug_web.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : sacred_voxel.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : pygbag.toml
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : main.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : sacred_audio.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : game/asylum.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : game/meme_factory.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : game/world.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : game/colosseum.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : game/tutorial.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : game/ui.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : game/__init__.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : game/hyperculture.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : game/player.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : game/hazed_hollow.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : game/seraphim.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : game/battle.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : web_assets/pythons.js
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : web_assets/browserfs.min.js
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/states_and_countries.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/ZACH_WILLIAMS_90.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/GAARET_LEISTER_90.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/WATCHER_AZAZEL_0.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/KILO_270.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/GAARET_LEISTER_270.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/HAZEION_90.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/EDISON_SHADE_90.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/CARSON_CHRIST_270.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/ANDREW_ESTMORLAND_180.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/ANDREW_ESTMORLAND_0.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/EDISON_SHADE_180.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/J.P._MORGAN_WRAITH_270.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/B-GOLDEN_270.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/HEIDI_ANDERSON_CHRIST_0.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/HEIDI_ANDERSON_CHRIST_180.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/ELI_180.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/WATCHER_AZAZEL_180.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/ZACH_WILLIAMS_0.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/KILO_90.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/RILEY_BLACKBURN_270.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/B-GOLDEN_90.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/ZACH_WILLIAMS_270.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/RILEY_BLACKBURN_0.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/EDISON_SHADE_0.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/J.P._MORGAN_WRAITH_0.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/GAARET_LEISTER_0.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/MAKINDRAN_270.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/MAKINDRAN_90.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/HEIDI_ANDERSON_CHRIST_90.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/NIKOLA_TESLA_180.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/CARSON_CHRIST_90.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/HAZEION_270.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/MAKINDRAN_0.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/EDISON_SHADE_270.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/CARSON_CHRIST_180.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/ANDREW_ESTMORLAND_270.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/J.P._MORGAN_WRAITH_180.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/B-GOLDEN_180.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/ELI_0.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/J.P._MORGAN_WRAITH_90.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/WATCHER_AZAZEL_90.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/GAARET_LEISTER_180.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/KILO_180.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/MAKINDRAN_180.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/RILEY_BLACKBURN_90.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/KILO_0.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/HAZEION_180.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/NIKOLA_TESLA_90.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/ANDREW_ESTMORLAND_90.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/NIKOLA_TESLA_270.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/B-GOLDEN_0.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/HAZEION_0.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/ELI_270.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/HEIDI_ANDERSON_CHRIST_270.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/WATCHER_AZAZEL_270.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/ZACH_WILLIAMS_180.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/CARSON_CHRIST_0.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/RILEY_BLACKBURN_180.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/NIKOLA_TESLA_0.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/ELI_90.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : run_with_log.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : custom.tmpl
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : bokemon-swarm.tar.gz
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : loading_screen.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : index.html
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : debug_report.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : tiktok_scraper.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : constants.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : bokemon-swarm.apk
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : generate_sprites.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : debug_overlay.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : sprite_mcp_assessor.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : README.md
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : favicon.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : generate_state_champions.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : debug_web.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : sacred_voxel.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : pygbag.toml
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : main.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : sacred_audio.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : game/asylum.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : game/meme_factory.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : game/world.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : game/colosseum.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : game/tutorial.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : game/ui.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : game/__init__.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : game/hyperculture.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : game/player.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : game/hazed_hollow.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : game/seraphim.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : game/battle.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : web_assets/pythons.js
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : web_assets/browserfs.min.js
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/states_and_countries.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/ZACH_WILLIAMS_90.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/GAARET_LEISTER_90.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/WATCHER_AZAZEL_0.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/KILO_270.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/GAARET_LEISTER_270.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/HAZEION_90.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/EDISON_SHADE_90.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/CARSON_CHRIST_270.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/ANDREW_ESTMORLAND_180.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/ANDREW_ESTMORLAND_0.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/EDISON_SHADE_180.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/J.P._MORGAN_WRAITH_270.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/B-GOLDEN_270.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/HEIDI_ANDERSON_CHRIST_0.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/HEIDI_ANDERSON_CHRIST_180.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/ELI_180.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/WATCHER_AZAZEL_180.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/ZACH_WILLIAMS_0.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/KILO_90.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/RILEY_BLACKBURN_270.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/B-GOLDEN_90.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/ZACH_WILLIAMS_270.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/RILEY_BLACKBURN_0.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/EDISON_SHADE_0.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/J.P._MORGAN_WRAITH_0.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/GAARET_LEISTER_0.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/MAKINDRAN_270.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/MAKINDRAN_90.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/HEIDI_ANDERSON_CHRIST_90.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/NIKOLA_TESLA_180.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/CARSON_CHRIST_90.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/HAZEION_270.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/MAKINDRAN_0.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/EDISON_SHADE_270.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/CARSON_CHRIST_180.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/ANDREW_ESTMORLAND_270.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/J.P._MORGAN_WRAITH_180.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/B-GOLDEN_180.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/ELI_0.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/J.P._MORGAN_WRAITH_90.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/WATCHER_AZAZEL_90.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/GAARET_LEISTER_180.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/KILO_180.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/MAKINDRAN_180.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/RILEY_BLACKBURN_90.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/KILO_0.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/HAZEION_180.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/NIKOLA_TESLA_90.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/ANDREW_ESTMORLAND_90.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/NIKOLA_TESLA_270.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/B-GOLDEN_0.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/HAZEION_0.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/ELI_270.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/HEIDI_ANDERSON_CHRIST_270.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/WATCHER_AZAZEL_270.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/ZACH_WILLIAMS_180.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/CARSON_CHRIST_0.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/RILEY_BLACKBURN_180.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/NIKOLA_TESLA_0.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/ELI_90.png
+packing 95 files complete
+
+    caching template https://pygame-web.github.io/cdn/0.9.3/default.tmpl
+    cached locally at /Users/nicholashughes/Documents/BOKEMON-SWARM/build/web-cache/27613e24ba16d44f2a5c88150c6d64e5.tmpl
+    result files will be in /Users/nicholashughes/Documents/BOKEMON-SWARM/build/web
+
+urllib.request.urlretrieve("https://pygame-web.github.io/cdn/0.9.3/default.tmpl", "/Users/nicholashughes/Documents/BOKEMON-SWARM/build/web-cache/27613e24ba16d44f2a5c88150c6d64e5.tmpl")
+Not using SSL
