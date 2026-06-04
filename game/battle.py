@@ -10,15 +10,18 @@ from constants import COLORS, PHI, CARRIER
 from .seraphim import Seraphim, Move
 
 class BattleSystem:
-    def __init__(self, player_seraphim: Seraphim, enemy_seraphim: Seraphim):
+    def __init__(self, player_seraphim: Seraphim, enemy_seraphim: Seraphim, allies: Optional[List[Seraphim]] = None):
         self.player = player_seraphim
         self.enemy = enemy_seraphim
+        self.allies = allies or []
         self.player_hp = player_seraphim.max_hp
         self.enemy_hp = enemy_seraphim.max_hp
         self.turn = "player"
         self.battle_log: List[str] = []
         self.carrier_lock_active = False
         self.carrier_lock_timer = 0
+        self.status_effects = {'player': {}, 'enemy': {}}
+        self.spotters_catch_used = False
         
     def player_attack(self, move: Move) -> bool:
         """Execute player's move, return True if successful"""
@@ -30,6 +33,62 @@ class BattleSystem:
                 self.carrier_lock_active = True
                 self.carrier_lock_timer = 180
                 self.battle_log.append("Press W to lock onto target!")
+                return True
+            
+            # Heidi special moves
+            if move.name == "Bavarian Backflip":
+                # Strikes twice with priority
+                damage1 = int(move.power * (1 if random.random() > 0.1 else 0.5))
+                self.enemy_hp = max(0, self.enemy_hp - damage1)
+                self.battle_log.append(f"{self.player.name} used {move.name}! First hit: {damage1} damage.")
+                if self.enemy_hp > 0:
+                    damage2 = int(move.power * 0.7 * (1 if random.random() > 0.2 else 0.5))
+                    self.enemy_hp = max(0, self.enemy_hp - damage2)
+                    self.battle_log.append(f"Second hit! {damage2} damage.")
+                self.turn = "enemy"
+                return True
+                
+            elif move.name == "Spotter's Catch":
+                if not self.spotters_catch_used:
+                    # Check if any ally would faint
+                    for ally in self.allies:
+                        if ally.max_hp * 0.5 > 0:  # Would restore 50%
+                            self.spotters_catch_used = True
+                            self.battle_log.append(f"{self.player.name} caught {ally.name}! Restored 50% HP.")
+                            # In full implementation, would restore HP
+                            break
+                self.turn = "enemy"
+                return True
+                
+            elif move.name == "Lover's Embrace":
+                # Heals LX (player) for 100%, others 50%
+                heal_amount = int(self.player.max_hp * 1.0)
+                self.player_hp = min(self.player.max_hp, self.player_hp + heal_amount)
+                self.battle_log.append(f"{self.player.name} healed for {heal_amount} HP!")
+                for ally in self.allies:
+                    heal = int(ally.max_hp * 0.5)
+                    # Would update ally HP in full implementation
+                    self.battle_log.append(f"{ally.name} healed for {heal} HP!")
+                self.turn = "enemy"
+                return True
+                
+            elif move.name == "4'11\" Fury":
+                # Power increases with more allies
+                base_power = move.power
+                ally_bonus = len(self.allies) * 10
+                total_power = base_power + ally_bonus
+                damage = int(total_power * (1 if random.random() > 0.1 else 0.5))
+                self.enemy_hp = max(0, self.enemy_hp - damage)
+                self.battle_log.append(f"{self.player.name} used {move.name}! {total_power} power. Dealt {damage} damage.")
+                self.turn = "enemy"
+                return True
+                
+            elif move.name == "Du, mein Schatz":
+                # Charms opponent, lowers their attack, raises Heidi's evasion
+                self.status_effects['enemy']['attack_down'] = True
+                self.status_effects['player']['evasion_up'] = True
+                self.battle_log.append(f"{self.player.name} charmed the opponent! Attack lowered, Evasion raised.")
+                self.turn = "enemy"
                 return True
                 
             damage = int(move.power * (1 if random.random() > 0.1 else 0.5))

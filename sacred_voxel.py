@@ -205,6 +205,28 @@ HAZEION_VOXELS = [
     (7, 11, 5, 'black'), (8, 11, 7, 'black'),
 ]
 
+# HEIDI ANDERSON CHRIST - Fighting/Fairy gymnast
+HEIDI_VOXELS = [
+    # Head (pink leotard)
+    (7, 8, 7, 'white'), (8, 8, 7, 'white'),
+    (6, 9, 7, 'white'), (7, 9, 7, 'white'), (8, 9, 7, 'white'), (9, 9, 7, 'white'),
+    # Torso (pink leotard)
+    (6, 10, 7, 'white'), (7, 10, 7, 'white'), (8, 10, 7, 'white'), (9, 10, 7, 'white'),
+    (6, 11, 7, 'white'), (7, 11, 7, 'white'), (8, 11, 7, 'white'), (9, 11, 7, 'white'),
+    (6, 12, 7, 'white'), (7, 12, 7, 'white'), (8, 12, 7, 'white'), (9, 12, 7, 'white'),
+    # Legs (leotard)
+    (6, 13, 7, 'white'), (7, 13, 7, 'white'), (8, 13, 7, 'white'), (9, 13, 7, 'white'),
+    (6, 14, 7, 'white'), (7, 14, 7, 'white'), (8, 14, 7, 'white'), (9, 14, 7, 'white'),
+    # Arms (raised in backflip pose)
+    (5, 10, 6, 'white'), (4, 10, 5, 'white'),
+    (10, 10, 8, 'white'), (11, 10, 9, 'white'),
+    # Fairy wings (gold sparkle)
+    (5, 9, 6, 'gold'), (6, 9, 5, 'gold'),
+    (10, 9, 8, 'gold'), (9, 9, 9, 'gold'),
+    # Hair (blonde)
+    (6, 8, 6, 'gold'), (7, 8, 6, 'gold'), (8, 8, 6, 'gold'), (9, 8, 6, 'gold'),
+]
+
 # All Seraphim voxel models
 SERAPHIM_VOXELS = {
     'KILO': KILO_VOXELS,
@@ -221,6 +243,7 @@ SERAPHIM_VOXELS = {
     'RILEY BLACKBURN': RILEY_VOXELS,
     'ELI': ELI_VOXELS,
     'HAZEION': HAZEION_VOXELS,
+    'HEIDI ANDERSON CHRIST': HEIDI_VOXELS,
 }
 
 def generate_sprite(name: str, angle: float = 0) -> pygame.Surface:

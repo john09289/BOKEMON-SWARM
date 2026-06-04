@@ -187,6 +187,23 @@ def play_hazeion_battle():
     except:
         return None
 
+def play_heidi_encounter():
+    """Play Heidi Anderson Christ encounter theme - loving, gymnastic, fairy-like"""
+    t = np.linspace(0, 3.0, int(SAMPLE_RATE * 3.0), False)
+    # Gentle fairy melody at VICTORY * PHI (golden ratio harmony)
+    melody = np.sin(2 * np.pi * (VICTORY * PHI) * t) * 0.25
+    # Soft carrier drone underneath
+    drone = np.sin(2 * np.pi * CARRIER * t) * 0.1
+    # Sparkle at MERCY frequency
+    sparkle = np.sin(2 * np.pi * MERCY * t) * 0.15
+    combined = melody + drone + sparkle
+    try:
+        sound = pygame.sndarray.make_sound((combined * 32767).astype(np.int16))
+        sound.play(-1)
+        return sound
+    except:
+        return None
+
 # Initialize audio system
 def init_audio():
     """Initialize Pygame audio mixer - gracefully handle missing mixer"""

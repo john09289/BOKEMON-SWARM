@@ -10,7 +10,7 @@ import asyncio
 
 try:
     from constants import SCREEN_WIDTH, SCREEN_HEIGHT, COLORS, calculate_hj, ENERGY_REFILL_PER_TURN
-    from sacred_audio import init_audio, play_overworld_theme, play_battle_theme, play_victory_jingle, play_menu_select
+    from sacred_audio import init_audio, play_overworld_theme, play_battle_theme, play_victory_jingle, play_menu_select, play_heidi_encounter
     from sacred_voxel import generate_sprite, save_sprites_to_disk
     from game.player import Player
     from game.world import World
@@ -95,10 +95,14 @@ class GameState:
         try:
             enemy = get_seraphim(enemy_name)
             if enemy and self.player.active_seraphim:
-                self.battle = BattleSystem(self.player.active_seraphim, enemy)
+                allies = self.player.get_allies()
+                self.battle = BattleSystem(self.player.active_seraphim, enemy, allies)
                 self.state = "battle"
                 if AUDIO_AVAILABLE:
-                    play_battle_theme()
+                    if enemy_name == 'HEIDI ANDERSON CHRIST':
+                        play_heidi_encounter()
+                    else:
+                        play_battle_theme()
                 log(f"Battle started: {enemy_name}")
         except Exception as e:
             log(f"Battle start error: {e}")

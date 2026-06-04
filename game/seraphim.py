@@ -248,6 +248,17 @@ def create_moves() -> dict:
             'Cleanses corrupted carrier frequency'),
         'balloon_burst': Move('Balloon Burst', 90, 22, 'Fire',
             'Explosive fire/flying combo'),
+        # Heidi moves
+        'bavarian_backflip': Move('Bavarian Backflip', 70, 15, 'Fighting',
+            'Rapid backflip kick; strikes twice with priority +1'),
+        'spotters_catch': Move('Spotter\'s Catch', 0, 10, 'Normal',
+            'If an ally would faint, catches them and restores 50% HP. Once per battle.'),
+        'lovers_embrace': Move('Lover\'s Embrace', 0, 12, 'Fairy',
+            'Heals LX for 100% max HP and cures all status. Heals others 50%.'),
+        '411_fury': Move('4\'11" Fury', 85, 18, 'Fighting',
+            'Ferocious gymnastic combo; power increases with more allies'),
+        'du_mein_schatz': Move('Du, mein Schatz', 0, 8, 'Normal',
+            'Charms opponent, lowering their Attack and raising Heidi\'s Evasion'),
     }
 
 # Seraphim roster
@@ -651,6 +662,16 @@ def create_seraphim_roster() -> dict:
             attack=110,
             defense=80,
             moves=[moves['balloon_burst'], moves['carrier_purge'], moves['hero_landing']]
+        ),
+        'HEIDI ANDERSON CHRIST': Seraphim(
+            name='HEIDI ANDERSON CHRIST',
+            element1='Fighting',
+            element2='Fairy',
+            level=28,
+            max_hp=115,
+            attack=88,
+            defense=82,
+            moves=[moves['bavarian_backflip'], moves['spotters_catch'], moves['lovers_embrace'], moves['411_fury'], moves['du_mein_schatz']]
         ),
     }
 

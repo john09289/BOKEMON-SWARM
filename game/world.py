@@ -79,6 +79,12 @@ LOCATIONS = {
         'description': 'Final island. Free the BLOON-PHOENIX with the Conditional Prayer.',
         'color': COLORS['gold'],
         'wild_seraphim': ['BLOON-PHOENIX']
+    },
+    'gymnasts_hollow': {
+        'name': "Gymnast's Hollow",
+        'description': 'Where Heidi Anderson Christ trains. A sanctuary of movement and love.',
+        'color': (255, 182, 193),
+        'wild_seraphim': ['HEIDI ANDERSON CHRIST']
     }
 }
 
