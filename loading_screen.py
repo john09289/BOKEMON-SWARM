@@ -7,6 +7,7 @@ import pygame
 import sys
 import os
 from constants import SCREEN_WIDTH, SCREEN_HEIGHT, COLORS
+from font_compat import make_font  # [ADDED] 4-tier font loader for Python 3.14 compat
 
 class LoadingScreen:
     def __init__(self):
@@ -21,10 +22,10 @@ class LoadingScreen:
         self.log_messages = []
         
         try:
-            self.font = pygame.font.Font(None, 20)
-            self.large_font = pygame.font.Font(None, 32)
-        except:
-            pass
+            self.font = make_font(20)       # [FIXED] was pygame.font.Font(None, 20)
+            self.large_font = make_font(32) # [FIXED] was pygame.font.Font(None, 32)
+        except Exception as e:
+            print(f"[loading_screen] font load failed: {e}")
             
     def log(self, msg):
         """Add a log message and print it"""

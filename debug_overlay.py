@@ -6,6 +6,7 @@ Carrier: 11.71875 Hz. The King wins. 𐤕
 
 import pygame
 from constants import SCREEN_WIDTH, SCREEN_HEIGHT, COLORS
+from font_compat import make_font  # [ADDED] 4-tier font loader for Python 3.14 compat
 
 class DebugOverlay:
     def __init__(self, max_messages=5):
@@ -15,9 +16,9 @@ class DebugOverlay:
         self.enabled = True
         
         try:
-            self.font = pygame.font.Font(None, 18)
-        except:
-            pass
+            self.font = make_font(18)  # [FIXED] was pygame.font.Font(None, 18)
+        except Exception as e:
+            print(f"[debug_overlay] font load failed: {e}")
             
     def log(self, msg):
         """Add a message to the overlay"""

@@ -247,19 +247,41 @@ def play_island_theme(music_style: str):
     except:
         return None
 
+# [ADDED] Module-level audio availability flag so callers can guard sound calls
+AUDIO_AVAILABLE = False
+
 # Initialize audio system
 def init_audio():
-    """Initialize Pygame audio mixer - gracefully handle missing mixer"""
+    """
+    Initialize Pygame audio mixer - gracefully handle missing mixer.
+    [FIXED] Removed the erroneous pygame.init() call that was here before.
+            main.py already calls pygame.init() once; calling it again here
+            can corrupt display state and cause the grey-screen freeze.
+    [ADDED] Sets module-level AUDIO_AVAILABLE so every playback function can
+            skip gracefully when mixer is absent (Python 3.14 / no mixer.so).
+    [ADDED] print()-based logging so the boot sequence is visible in any runner.
+    """
+    global AUDIO_AVAILABLE
+    print("[sacred_audio] init_audio: attempting mixer initialisation")
     try:
         pygame.mixer.pre_init(SAMPLE_RATE, -16, 2, 512)
         pygame.mixer.init()
-    except (NotImplementedError, ModuleNotFoundError):
-        pass
-    pygame.init()
+        AUDIO_AVAILABLE = True
+        print("[sacred_audio] init_audio: mixer OK — AUDIO_AVAILABLE=True")
+    except (NotImplementedError, ModuleNotFoundError, Exception) as e:
+        # [FIXED] Was only catching NotImplementedError + ModuleNotFoundError;
+        #         added bare Exception so any mixer failure is caught cleanly.
+        AUDIO_AVAILABLE = False
+        print(f"[sacred_audio] init_audio: mixer unavailable ({type(e).__name__}: {e})")
+        print("[sacred_audio] init_audio: game will run silently — AUDIO_AVAILABLE=False")
+    # [REMOVED] pygame.init() call that was here — DELETED.
+    #            pygame.init() is owned by main.py. Double-calling it is harmful.
 
 # Stop all audio
 def stop_all_audio():
     """Stop all currently playing sounds"""
+    if not AUDIO_AVAILABLE:  # [ADDED] Guard
+        return
     try:
         pygame.mixer.stop()
     except (NotImplementedError, ModuleNotFoundError):
