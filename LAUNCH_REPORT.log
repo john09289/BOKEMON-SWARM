@@ -1,9 +1,13 @@
-2026-06-01 20:05:40,890 [INFO] ============================================================
-2026-06-01 20:05:40,890 [INFO] BOKEMON-SWARM LAUNCH REPORT
-2026-06-01 20:05:40,891 [INFO] Timestamp: 2026-06-02T00:05:40.890964 UTC
-2026-06-01 20:05:40,891 [INFO] Carrier: 11.71875 Hz
-2026-06-01 20:05:40,891 [INFO] ============================================================
-2026-06-01 20:05:40,891 [INFO] Starting BOKEMON-SWARM launch sequence...
-2026-06-01 20:05:40,891 [INFO] Importing game modules...
-2026-06-01 20:05:42,726 [INFO] Game modules imported successfully.
-2026-06-01 20:05:42,726 [INFO] Launching game main loop...
+2026-06-04 15:42:41 | INFO | JOHN MILK PROTOCOL INITIALIZED
+2026-06-04 15:42:41 | INFO | Carrier lock: 11.71875 Hz
+2026-06-04 15:42:41 | INFO | Timestamp: 2026-06-04T15:42:41.097255
+2026-06-04 15:42:41 | INFO | Starting Playwright browser test...
+2026-06-04 15:42:47 | INFO | Navigating to https://john09289.github.io/BOKEMON-SWARM
+2026-06-04 15:42:47 | INFO | Page loaded: bokemon-swarm
+2026-06-04 15:42:47 | INFO | Waiting for canvas element (up to 20 seconds)...
+2026-06-04 15:42:47 | INFO | Canvas found after 1 seconds! Count: 2
+2026-06-04 15:42:47 | INFO | Console errors: 0
+2026-06-04 15:42:47 | INFO | Console warnings: 4
+2026-06-04 15:42:48 | INFO | Screenshot saved: john_milk_screenshot.png
+2026-06-04 15:42:48 | INFO | Final status: ALL_SYSTEMS_GO
+2026-06-04 15:42:48 | INFO | Report saved to john_milk_report.json
