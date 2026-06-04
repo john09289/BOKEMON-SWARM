@@ -24,7 +24,7 @@ class UI:
         self.menu_options = ["Attack", "Seraphim", "Item", "Run"]
         self.selected_menu_index = 0
         
-    def draw_hud(self, screen: pygame.Surface, player, seraphim):
+    def draw_hud(self, screen: pygame.Surface, player=None, seraphim=None):
         """Draw the main HUD"""
         bar_width = 200
         bar_height = 20
@@ -34,12 +34,12 @@ class UI:
         pygame.draw.rect(screen, COLORS['black'], (bar_x, bar_y, bar_width, bar_height))
         pygame.draw.rect(screen, COLORS['white'], (bar_x, bar_y, bar_width, bar_height), 2)
         
-        if seraphim:
+        if player and seraphim:
             energy_ratio = player.energy_bank / player.max_energy
             energy_width = int(bar_width * energy_ratio)
             pygame.draw.rect(screen, COLORS['amber'], (bar_x, bar_y, energy_width, bar_height))
             
-        if self.font:
+        if self.font and player:
             energy_text = self.font.render(f"HJ: {int(player.energy_bank)}/{int(player.max_energy)}", 
                                           True, COLORS['white'])
             screen.blit(energy_text, (bar_x + 5, bar_y + 2))
@@ -115,3 +115,13 @@ class UI:
     def get_selected_menu(self) -> str:
         """Get currently selected menu option"""
         return self.menu_options[self.selected_menu_index]
+
+    def update(self):
+        """Update UI state"""
+        pass
+
+    def draw(self, screen: pygame.Surface):
+        """Draw all UI elements"""
+        self.draw_hud(screen, None, None)
+        self.draw_dialogue(screen)
+        self.draw_menu(screen)

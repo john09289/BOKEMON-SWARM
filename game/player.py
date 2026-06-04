@@ -47,6 +47,10 @@ class Player:
     def get_allies(self) -> List[Seraphim]:
         """Get all party members except the active one"""
         return [s for s in self.seraphim_party if s != self.active_seraphim]
+
+    def update(self):
+        """Update player state"""
+        pass
         
     def move(self, dx: int, dy: int, world_bounds: tuple):
         """Move player within world bounds"""

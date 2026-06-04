@@ -150,3 +150,7 @@ class World:
         if random.random() < 0.1:
             return self.get_random_wild_seraphim()
         return None
+
+    def update(self):
+        """Update world state"""
+        pass

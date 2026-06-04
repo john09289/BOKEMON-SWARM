@@ -120,6 +120,10 @@ class Tutorial:
                 return True
         return False
         
+    def update(self):
+        """Update tutorial state"""
+        pass
+
     def draw(self, screen: pygame.Surface):
         """Draw tutorial overlay"""
         self.ui.draw_dialogue(screen)
