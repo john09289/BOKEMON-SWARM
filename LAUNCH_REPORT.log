@@ -1,0 +1,19 @@
+2026-06-04 15:57:55 | INFO | JOHN MILK PROTOCOL INITIALIZED
+2026-06-04 15:57:55 | INFO | Carrier lock: 11.71875 Hz
+2026-06-04 15:57:55 | INFO | Timestamp: 2026-06-04T15:57:55.713500
+2026-06-04 15:57:55 | INFO | Constants loaded. Carrier: 11.71875 Hz
+2026-06-04 15:57:55 | INFO | Carrier lock verified: 11.71875 Hz
+2026-06-04 15:57:56 | INFO | Generated 60 sprites
+2026-06-04 15:57:56 | INFO | Heidi sprites found: ['HEIDI ANDERSON CHRIST_0', 'HEIDI ANDERSON CHRIST_90', 'HEIDI ANDERSON CHRIST_180', 'HEIDI ANDERSON CHRIST_270']
+2026-06-04 15:57:56 | INFO | All Heidi sprites generated (4 angles)
+2026-06-04 15:57:56 | INFO | Audio engine initialized
+2026-06-04 15:57:56 | INFO | Total Seraphim in roster: 40
+2026-06-04 15:57:56 | INFO | Heidi loaded: HEIDI ANDERSON CHRIST, Level 28, Fighting/Fairy
+2026-06-04 15:57:56 | INFO | Heidi moves: ['Bavarian Backflip', "Spotter's Catch", "Lover's Embrace", '4\'11" Fury', 'Du, mein Schatz']
+2026-06-04 15:57:56 | INFO | Gymnast's Hollow location found: Gymnast's Hollow
+2026-06-04 15:57:56 | INFO | Battle system initialized with 1 allies
+2026-06-04 15:57:56 | INFO | Battle system test: PASS
+2026-06-04 15:57:56 | INFO | ==================================================
+2026-06-04 15:57:56 | INFO | JOHN MILK PROTOCOL PHASE 1 COMPLETE
+2026-06-04 15:57:56 | INFO | All systems verified. Ready for browser test.
+2026-06-04 15:57:56 | INFO | ==================================================

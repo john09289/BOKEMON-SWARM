@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-06-04T15:42:41.176703",
+  "url": "https://john09289.github.io/BOKEMON-SWARM",
+  "canvas_found": true,
+  "console_errors": [],
+  "console_warnings": [
+    "Unrecognized feature: 'monetization'.",
+    "Unrecognized feature: 'xr'.",
+    "Allow attribute will take precedence over 'allowfullscreen'.",
+    "Connection: Wired"
+  ],
+  "page_title": "bokemon-swarm",
+  "final_url": "https://john09289.github.io/BOKEMON-SWARM/",
+  "screenshot": "john_milk_screenshot.png",
+  "status": "ALL_SYSTEMS_GO"
+}
