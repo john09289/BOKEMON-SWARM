@@ -1,0 +1,251 @@
+WARNING: wasm mimetype unsupported on that system, trying to correct
+Traceback (most recent call last):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/nicholashughes/Library/Python/3.9/lib/python/site-packages/pygbag/__main__.py", line 289, in <module>
+    asyncio.run(import_site())
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/asyncio/base_events.py", line 642, in run_until_complete
+    return future.result()
+  File "/Users/nicholashughes/Library/Python/3.9/lib/python/site-packages/pygbag/__main__.py", line 23, in import_site
+    await main_run(app_folder, mainscript)
+  File "/Users/nicholashughes/Library/Python/3.9/lib/python/site-packages/pygbag/app.py", line 595, in main_run
+    testserver.run_code_server(args, CC)
+  File "/Users/nicholashughes/Library/Python/3.9/lib/python/site-packages/pygbag/testserver.py", line 351, in run_code_server
+    code_server(HandlerClass=handler_class, port=args.port, bind=args.bind, ssl=ssl)
+  File "/Users/nicholashughes/Library/Python/3.9/lib/python/site-packages/pygbag/testserver.py", line 292, in code_server
+    with ServerClass(server_address, HandlerClass) as httpd:
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 452, in __init__
+    self.server_bind()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 138, in server_bind
+    socketserver.TCPServer.server_bind(self)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 466, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [Errno 48] Address already in use
+ *pygbag 0.9.3*
+
+Serving python files from [/Users/nicholashughes/Documents/BOKEMON-SWARM/build/web]
+
+with no security/performance in mind, i'm just a test tool : don't rely on me
+
+
+SUMMARY
+________________________
+
+# the app folder
+app_folder=/Users/nicholashughes/Documents/BOKEMON-SWARM
+
+# artefacts directory
+build_dir=/Users/nicholashughes/Documents/BOKEMON-SWARM/build/web
+
+# cache directory
+cache=/Users/nicholashughes/Documents/BOKEMON-SWARM/build/web-cache
+
+# the window title and icon name
+app_name=bokemon-swarm
+
+# package name, better make it unique
+package=web.pygame.BOKEMON-SWARM-1780603042
+
+# icons:  96x96 for desktop, 16x16 for web
+icon=favicon.png
+
+# js/wasm provider
+cdn=https://pygame-web.github.io/cdn/0.9.3/
+
+now packing application ....
+
+
+WARNING: No pygbag.ini found! See: https://pygame-web.github.io/wiki/pygbag-configuration
+Ignored dirs: []
+Ignored files: []
+Now in /
+     /bokemon-swarm.tar.gz
+     /index.html
+     /constants.py
+     /bokemon-swarm.apk
+     /generate_sprites.py
+     /poptropica_generator.py
+     /favicon.png
+     /sacred_voxel.py
+     /main.py
+     /sacred_audio.py
+Now in /game
+     /game/asylum.py
+     /game/meme_factory.py
+     /game/world.py
+     /game/colosseum.py
+     /game/tutorial.py
+     /game/ui.py
+     /game/__init__.py
+     /game/hyperculture.py
+     /game/player.py
+     /game/hazed_hollow.py
+     /game/seraphim.py
+     /game/battle.py
+Now in /data
+     /data/states_and_countries.json
+     /data/poptropica_islands.json
+Now in /data/islands
+     /data/islands/monster_carnival.json
+     /data/islands/twisted_thicket.json
+     /data/islands/realm_of_the_elementals.json
+     /data/islands/wild_west.json
+     /data/islands/haunted_manor.json
+     /data/islands/spy_isle.json
+     /data/islands/counterfeit.json
+     /data/islands/dreamy.json
+     /data/islands/skullduggery.json
+     /data/islands/penguin_gala.json
+     /data/islands/shark_tartarus.json
+     /data/islands/battle_training.json
+     /data/islands/magma_blast.json
+     /data/islands/astro_knights.json
+     /data/islands/poptropolis.json
+     /data/islands/great_pumpkin.json
+     /data/islands/cryptids.json
+     /data/islands/steamworks.json
+     /data/islands/sos_sanctuary.json
+     /data/islands/early_dome.json
+     /data/islands/zomberry.json
+     /data/islands/dino_isle.json
+     /data/islands/red_dragon.json
+     /data/islands/lunar_colony.json
+     /data/islands/mythology.json
+     /data/islands/virus_vault.json
+     /data/islands/back_lot.json
+     /data/islands/super_power.json
+     /data/islands/time_tangled.json
+     /data/islands/golden_egg_summit.json
+Now in /assets/sprites
+     /assets/sprites/HEIDI_ANDERSON_CHRIST_0.png
+     /assets/sprites/HEIDI_ANDERSON_CHRIST_180.png
+     /assets/sprites/HEIDI_ANDERSON_CHRIST_90.png
+     /assets/sprites/HEIDI_ANDERSON_CHRIST_270.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : bokemon-swarm.tar.gz
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : index.html
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : constants.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : bokemon-swarm.apk
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : generate_sprites.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : poptropica_generator.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : favicon.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : sacred_voxel.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : main.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : sacred_audio.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : game/asylum.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : game/meme_factory.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : game/world.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : game/colosseum.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : game/tutorial.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : game/ui.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : game/__init__.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : game/hyperculture.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : game/player.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : game/hazed_hollow.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : game/seraphim.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : game/battle.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/states_and_countries.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/poptropica_islands.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/monster_carnival.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/twisted_thicket.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/realm_of_the_elementals.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/wild_west.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/haunted_manor.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/spy_isle.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/counterfeit.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/dreamy.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/skullduggery.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/penguin_gala.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/shark_tartarus.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/battle_training.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/magma_blast.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/astro_knights.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/poptropolis.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/great_pumpkin.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/cryptids.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/steamworks.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/sos_sanctuary.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/early_dome.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/zomberry.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/dino_isle.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/red_dragon.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/lunar_colony.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/mythology.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/virus_vault.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/back_lot.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/super_power.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/time_tangled.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/golden_egg_summit.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/HEIDI_ANDERSON_CHRIST_0.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/HEIDI_ANDERSON_CHRIST_180.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/HEIDI_ANDERSON_CHRIST_90.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/HEIDI_ANDERSON_CHRIST_270.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : bokemon-swarm.tar.gz
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : index.html
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : constants.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : bokemon-swarm.apk
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : generate_sprites.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : poptropica_generator.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : favicon.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : sacred_voxel.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : main.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : sacred_audio.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : game/asylum.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : game/meme_factory.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : game/world.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : game/colosseum.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : game/tutorial.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : game/ui.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : game/__init__.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : game/hyperculture.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : game/player.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : game/hazed_hollow.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : game/seraphim.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : game/battle.py
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/states_and_countries.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/poptropica_islands.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/monster_carnival.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/twisted_thicket.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/realm_of_the_elementals.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/wild_west.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/haunted_manor.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/spy_isle.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/counterfeit.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/dreamy.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/skullduggery.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/penguin_gala.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/shark_tartarus.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/battle_training.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/magma_blast.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/astro_knights.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/poptropolis.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/great_pumpkin.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/cryptids.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/steamworks.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/sos_sanctuary.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/early_dome.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/zomberry.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/dino_isle.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/red_dragon.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/lunar_colony.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/mythology.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/virus_vault.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/back_lot.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/super_power.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/time_tangled.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : data/islands/golden_egg_summit.json
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/HEIDI_ANDERSON_CHRIST_0.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/HEIDI_ANDERSON_CHRIST_180.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/HEIDI_ANDERSON_CHRIST_90.png
+	/Users/nicholashughes/Documents/BOKEMON-SWARM : assets/sprites/HEIDI_ANDERSON_CHRIST_270.png
+packing 58 files complete
+
+    caching template https://pygame-web.github.io/cdn/0.9.3/default.tmpl
+    cached locally at /Users/nicholashughes/Documents/BOKEMON-SWARM/build/web-cache/27613e24ba16d44f2a5c88150c6d64e5.tmpl
+    result files will be in /Users/nicholashughes/Documents/BOKEMON-SWARM/build/web
+
+urllib.request.urlretrieve("https://pygame-web.github.io/cdn/0.9.3/default.tmpl", "/Users/nicholashughes/Documents/BOKEMON-SWARM/build/web-cache/27613e24ba16d44f2a5c88150c6d64e5.tmpl")
+Not using SSL
