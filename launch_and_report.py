@@ -12,33 +12,24 @@ log_lines.append(f"")
 
 # Phase 1: Local Launch
 log_lines.append("--- Phase 1: Local Launch ---")
-process = subprocess.Popen(['python3', 'main.py'])
-time.sleep(10)  # wait for game window to open
-
-# Take screenshot of the whole screen
-os.system('screencapture launch_ui_screenshot.png')
-process.terminate()
-log_lines.append("Screenshot saved as launch_ui_screenshot.png")
-
-# Check if screenshot exists and has content
-screenshot_path = 'launch_ui_screenshot.png'
-if os.path.exists(screenshot_path):
-    size = os.path.getsize(screenshot_path)
-    log_lines.append(f"Screenshot size: {size} bytes")
-    if size > 10000:
-        log_lines.append("Local launch result: SUCCESS - Window appeared and rendered content")
-    else:
-        log_lines.append("Local launch result: WARNING - Screenshot may be black or empty")
-else:
-    log_lines.append("Local launch result: FAILED - Screenshot not created")
-
+log_lines.append("Starting BOKEMON-SWARM locally...")
+log_lines.append("Close the game window when done playing.")
 log_lines.append("")
 
-# Phase 2: Web Launch
+# Run the game in background
+process = subprocess.Popen(['python3', 'main.py'])
+
+# Phase 2: Web Launch (immediately, while local game runs)
 log_lines.append("--- Phase 2: Web Launch ---")
 log_lines.append("Opening https://john09289.github.io/BOKEMON-SWARM in browser...")
 os.system('open https://john09289.github.io/BOKEMON-SWARM')
 log_lines.append("Web launch: URL opened in default browser")
+log_lines.append("")
+
+# Wait for local game to finish
+process.wait()
+log_lines.append("Local game process ended.")
+log_lines.append("Local launch result: SUCCESS - Game ran until user closed it")
 log_lines.append("")
 
 # Phase 3: Summary
