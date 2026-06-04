@@ -1,7 +1,0 @@
-[build]
-include = ["assets/**/*.png", "data/**/*.json", "web_assets/**/*", "vtx.js"]
-
-[web]
-title = "BOKEMON-SWARM"
-width = 800
-height = 600

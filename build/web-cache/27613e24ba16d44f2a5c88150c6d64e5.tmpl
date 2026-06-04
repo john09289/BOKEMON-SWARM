@@ -9,8 +9,8 @@ Loading {{cookiecutter.title}} from {{cookiecutter.archive}}.apk
     Screen  : {{cookiecutter.width}}x{{cookiecutter.height}}
     Title   : {{cookiecutter.title}}
     Folder  : {{cookiecutter.directory}}
-    Authors : pgw
-    SPDX-License-Identifier: cookiecutter.spdx
+    Authors : {{cookiecutter.authors}}
+    SPDX-License-Identifier: {{cookiecutter.spdx}}
 
 """)
 
@@ -109,6 +109,10 @@ asyncio.run( custom_site() )
 
 
 
+
+
+
+
 # BEGIN BLOCK
 #
 # now this is the html part you can (and should) customize
@@ -127,14 +131,13 @@ asyncio.run( custom_site() )
 //
 //
 //
-//
 
     {%- if cookiecutter.comment != "" -%}
 {{cookiecutter.comment}}
     {% endif %}
 
 --><script type="application/javascript">
-// END BLLOCK
+// END BLOCK
 
 
 
@@ -281,7 +284,7 @@ function show_infobox() {
 */
     </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/browserfs@latest/dist/browserfs.min.js"></script>
+    <script src="{{cookiecutter.cdn}}/browserfs.min.js"></script>
 
 </head>
 
