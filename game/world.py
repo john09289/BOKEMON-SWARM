@@ -52,6 +52,42 @@ LOCATIONS = {
         'description': 'Where Heidi Anderson Christ trains. A sanctuary of movement and love.',
         'color': (255, 182, 193),
         'wild_seraphim': ['HEIDI ANDERSON CHRIST']
+    },
+    'hypebeast_bazaar': {
+        'name': 'Hypebeast Bazaar',
+        'description': 'Underground market of limited drops, grails, and resell flips.',
+        'color': (180, 0, 255),
+        'wild_seraphim': ['HYPEBEAST DEALER', 'GRAIL HUNTER']
+    },
+    'maga_arena': {
+        'name': 'MAGA Arena',
+        'description': 'Patriotic colosseum where champions rally and freedom fists fly.',
+        'color': (220, 20, 60),
+        'wild_seraphim': ['MAGA CHAMPION', 'PATRIOT']
+    },
+    'world_cultural_plaza': {
+        'name': 'World Cultural Plaza',
+        'description': 'A melting pot of dance, sport, and song from every nation.',
+        'color': (255, 140, 0),
+        'wild_seraphim': ['SAMBA QUEEN', 'CAPOEIRA MASTER', 'SUMO CHAMPION', 'KUNG FU MASTER', 'BALLET DIVA', 'HIP HOP LEGEND', 'METALHEAD', 'DISCO KING']
+    },
+    'trump_tower': {
+        'name': 'Trump Tower',
+        'description': 'Golden spire of executive orders and tower slams.',
+        'color': (255, 215, 0),
+        'wild_seraphim': ['TRUMP', 'BARRON']
+    },
+    'meme_factory': {
+        'name': 'Meme Factory',
+        'description': 'Assembly line of viral content, deep fries, and algorithm rage.',
+        'color': (0, 255, 255),
+        'wild_seraphim': ['JOHNNY ELBOWS', 'MEME LORD']
+    },
+    'bokeball_court': {
+        'name': 'Bokeball Court',
+        'description': 'Where slam dunks, buzzer beaters, and alley-oops decide fate.',
+        'color': (255, 165, 0),
+        'wild_seraphim': ['BOKEBALL MVP', 'POINT GUARD', 'CENTER']
     }
 }
 

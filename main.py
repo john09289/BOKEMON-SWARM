@@ -18,6 +18,7 @@ try:
     from game.ui import UI
     from game.tutorial import Tutorial
     from game.seraphim import get_seraphim
+    from game.bokeball_jam import BokeballJam
     from loading_screen import LoadingScreen
     from debug_overlay import DebugOverlay
 except ImportError as e:
@@ -83,6 +84,7 @@ class GameState:
         self.ui = UI()
         self.tutorial = Tutorial(self.ui)
         self.battle = None
+        self.bokeball_jam = None
         self.clock = pygame.time.Clock()
         self.running = True
         self.poptropi_con_unlocked = False
@@ -145,6 +147,12 @@ class GameState:
                                 self.start_battle(encounter)
                         elif event.key == pygame.K_m:
                             self.show_map()
+                        elif event.key == pygame.K_b:
+                            # Start Bokeball Jam mini-game
+                            if self.world.current_location == 'bokeball_court':
+                                self.bokeball_jam = BokeballJam(screen, self.player.active_seraphim)
+                                self.state = "bokeball_jam"
+                                log("Started Bokeball Jam mini-game")
                             
                 elif self.state == "battle":
                     if event.type == pygame.KEYDOWN:
@@ -165,6 +173,13 @@ class GameState:
                                 self.state = "overworld"
                                 if AUDIO_AVAILABLE:
                                     play_overworld_theme()
+                elif self.state == "bokeball_jam":
+                    if self.bokeball_jam:
+                        result = self.bokeball_jam.handle_event(event)
+                        if result == "exit" or result == "time_up":
+                            self.state = "overworld"
+                            self.bokeball_jam = None
+                            log("Bokeball Jam ended")
         except Exception as e:
             log(f"Event handling error: {e}")
             self.ui.show_dialogue(f"Error: {e}")
@@ -192,6 +207,18 @@ class GameState:
                     self.player.add_seraphim("BLOON-PHOENIX")
                     self.ui.show_dialogue("You captured BLOON-PHOENIX! Poptropi-Con mount unlocked.")
                     log("Captured BLOON-PHOENIX")
+            elif loc == 'hypebeast_bazaar':
+                self.ui.show_dialogue("HYPEBEAST DEALER: 'Grails only. No cap. You buying or browsing?'")
+            elif loc == 'maga_arena':
+                self.ui.show_dialogue("MAGA CHAMPION: 'Make BOKEMON Great Again! Ready to fight?'")
+            elif loc == 'world_cultural_plaza':
+                self.ui.show_dialogue("PLAZA GUIDE: 'Every culture, every fight, every rhythm. Explore them all!'")
+            elif loc == 'trump_tower':
+                self.ui.show_dialogue("TRUMP: 'I have the best Seraphim. Tremendous moves. Believe me.'")
+            elif loc == 'meme_factory':
+                self.ui.show_dialogue("JOHNNY ELBOWS: 'Factory\'s open. Deep fries, viral spreads, algorithm rage. What\'s your meme?'")
+            elif loc == 'bokeball_court':
+                self.ui.show_dialogue("BOKEBALL MVP: 'Court\'s live. Slam dunk, buzzer beater, or alley-oop? Pick your play.'")
             else:
                 self.ui.show_dialogue(f"You are at {self.world.get_location_data()['name']}.")
         except Exception as e:
@@ -202,9 +229,12 @@ class GameState:
         if not self.poptropi_con_unlocked:
             self.ui.show_dialogue("Map locked. Find the BALLOON GUIDE in Pittsboro Nexus first.")
             return
-        options = ["Pittsboro Nexus", "Poptropi-Con Hub", "Early-Dome Island", "Shark-Tartarus Island",
-                   "Spy-Isle", "Super-Power Island", "Time-Tangled Island", "Golden Egg Summit"]
-        self.ui.show_dialogue("Fast Travel: " + ", ".join(options[:4]) + "... (demo)")
+        options = [
+            "Pittsboro Nexus", "Poptropi-Con Hub", "Hypebeast Bazaar", "MAGA Arena",
+            "World Cultural Plaza", "Trump Tower", "Meme Factory", "Bokeball Court",
+            "Early-Dome Island", "Shark-Tartarus Island", "Golden Egg Summit"
+        ]
+        self.ui.show_dialogue("Fast Travel: " + ", ".join(options[:6]) + "... (demo)")
             
     def draw(self):
         """Draw current state"""
@@ -225,6 +255,11 @@ class GameState:
                 if self.battle:
                     self.battle.draw(screen)
                     self.ui.draw_menu(screen)
+                    
+            elif self.state == "bokeball_jam":
+                if self.bokeball_jam:
+                    self.bokeball_jam.update()
+                    self.bokeball_jam.draw()
                     
             elif self.state == "menu":
                 self.ui.draw_hud(screen, self.player, self.player.active_seraphim)

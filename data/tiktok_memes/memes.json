@@ -1,0 +1,142 @@
+[
+  {
+    "name": "Distracted Boyfriend",
+    "category": "reaction",
+    "virality": 1.0,
+    "scraped_at": "2026-06-04T20:44:22.138831",
+    "tiktok_id": "tt_398910"
+  },
+  {
+    "name": "Woman Yelling at Cat",
+    "category": "reaction",
+    "virality": 0.902896632078518,
+    "scraped_at": "2026-06-04T20:44:22.138847",
+    "tiktok_id": "tt_556950"
+  },
+  {
+    "name": "Drake Hotline",
+    "category": "reaction",
+    "virality": 0.9776167547964139,
+    "scraped_at": "2026-06-04T20:44:22.138850",
+    "tiktok_id": "tt_397270"
+  },
+  {
+    "name": "Two Buttons",
+    "category": "choice",
+    "virality": 0.8771556385061479,
+    "scraped_at": "2026-06-04T20:44:22.138852",
+    "tiktok_id": "tt_393694"
+  },
+  {
+    "name": "Change My Mind",
+    "category": "opinion",
+    "virality": 0.8388876234055528,
+    "scraped_at": "2026-06-04T20:44:22.138854",
+    "tiktok_id": "tt_924028"
+  },
+  {
+    "name": "Surprised Pikachu",
+    "category": "reaction",
+    "virality": 0.8425889225878018,
+    "scraped_at": "2026-06-04T20:44:22.138857",
+    "tiktok_id": "tt_791516"
+  },
+  {
+    "name": "Expanding Brain",
+    "category": "comparison",
+    "virality": 0.9071240530289824,
+    "scraped_at": "2026-06-04T20:44:22.138859",
+    "tiktok_id": "tt_130135"
+  },
+  {
+    "name": "Is This a Pigeon",
+    "category": "misunderstanding",
+    "virality": 0.8585341535166907,
+    "scraped_at": "2026-06-04T20:44:22.138861",
+    "tiktok_id": "tt_944668"
+  },
+  {
+    "name": "Roll Safe",
+    "category": "thinking",
+    "virality": 0.8881323269733623,
+    "scraped_at": "2026-06-04T20:44:22.138863",
+    "tiktok_id": "tt_733473"
+  },
+  {
+    "name": "Hide the Pain Harold",
+    "category": "reaction",
+    "virality": 0.8343724585482037,
+    "scraped_at": "2026-06-04T20:44:22.138865",
+    "tiktok_id": "tt_473532"
+  },
+  {
+    "name": "Disaster Girl",
+    "category": "reaction",
+    "virality": 0.9389592097366574,
+    "scraped_at": "2026-06-04T20:44:22.138867",
+    "tiktok_id": "tt_747972"
+  },
+  {
+    "name": "Leonardo DiCaprio Cheers",
+    "category": "celebration",
+    "virality": 0.8883975146646826,
+    "scraped_at": "2026-06-04T20:44:22.138869",
+    "tiktok_id": "tt_768893"
+  },
+  {
+    "name": "Philosoraptor",
+    "category": "question",
+    "virality": 0.7961616480615255,
+    "scraped_at": "2026-06-04T20:44:22.138871",
+    "tiktok_id": "tt_214556"
+  },
+  {
+    "name": "Bad Luck Brian",
+    "category": "misfortune",
+    "virality": 0.8738769790402545,
+    "scraped_at": "2026-06-04T20:44:22.138873",
+    "tiktok_id": "tt_825671"
+  },
+  {
+    "name": "Success Kid",
+    "category": "success",
+    "virality": 0.9569253413603213,
+    "scraped_at": "2026-06-04T20:44:22.138875",
+    "tiktok_id": "tt_303456"
+  },
+  {
+    "name": "Overly Attached Girlfriend",
+    "category": "relationship",
+    "virality": 0.8516145380489736,
+    "scraped_at": "2026-06-04T20:44:22.138877",
+    "tiktok_id": "tt_971897"
+  },
+  {
+    "name": "Scumbag Steve",
+    "category": "behavior",
+    "virality": 0.8053816757870387,
+    "scraped_at": "2026-06-04T20:44:22.138879",
+    "tiktok_id": "tt_787434"
+  },
+  {
+    "name": "Good Guy Greg",
+    "category": "behavior",
+    "virality": 0.778391257070295,
+    "scraped_at": "2026-06-04T20:44:22.138881",
+    "tiktok_id": "tt_222867"
+  },
+  {
+    "name": "Socially Awkward Penguin",
+    "category": "situation",
+    "virality": 0.8376529078510876,
+    "scraped_at": "2026-06-04T20:44:22.138883",
+    "tiktok_id": "tt_281497"
+  },
+  {
+    "name": "Confession Bear",
+    "category": "admission",
+    "virality": 0.8166146661677496,
+    "scraped_at": "2026-06-04T20:44:22.138885",
+    "tiktok_id": "tt_826283"
+  }
+]

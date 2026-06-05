@@ -1,115 +1,167 @@
 """
-TikTok Meme Scraper for BOKEMON-SWARM
-Uses Playwright to scrape trending memes and generate Seraphim
-All audio is procedurally generated to avoid copyright
+TikTok Meme Scraper for BOKEMON SWARM
+Scrapes trending TikTok content for meme integration
+Carrier: 11.71875 Hz
 """
 
 import json
 import os
-from datetime import datetime, timedelta
+import time
+import random
+from datetime import datetime
 from typing import List, Dict, Optional
 
-# Note: This requires playwright to be installed: pip install playwright
-# Run: playwright install chromium
 
-def get_trending_memes() -> List[Dict]:
-    """
-    Scrape TikTok trending page for meme sounds
-    Returns list of meme data with synthesized audio
-    """
-    # This is a placeholder - actual implementation would use Playwright
-    # For now, we return static meme data
+class TikTokMemeScraper:
+    """Scrapes and stores TikTok meme data for the Meme Factory"""
     
-    memes = [
-        {
-            'name': 'JOHNNY ELBOWS',
-            'description': 'Flexible contortionist meme',
-            'type1': 'Fighting',
-            'type2': 'Fairy',
-            'moves': ['elbow_drop', 'cringe_dance', 'viral_spin'],
-            'audio_pattern': [35.15625, 70.3125, 140.625]  # Sacred frequencies
-        },
-        {
-            'name': 'DANIEL ALRASON',
-            'description': 'Unfiltered chaotic lad',
-            'type1': 'Normal',
-            'type2': 'Dark',
-            'moves': ['impulse_rant', 'self_sabotage', 'larson_out'],
-            'audio_pattern': [11.71875, 22.0, 35.15625]
-        },
-        {
-            'name': 'GUNNY MEME',
-            'description': 'Drill sergeant turned meme',
-            'type1': 'Steel',
-            'type2': 'Fire',
-            'moves': ['roast', 'boot_camp', 'war_face'],
-            'audio_pattern': [70.3125, 140.625, 280.0]
+    def __init__(self, data_dir: str = "data/tiktok_memes"):
+        self.data_dir = data_dir
+        self.memes_file = os.path.join(data_dir, "memes.json")
+        self.trending_file = os.path.join(data_dir, "trending.json")
+        self.ensure_data_dir()
+        
+    def ensure_data_dir(self):
+        """Create data directory if it doesn't exist"""
+        os.makedirs(self.data_dir, exist_ok=True)
+    
+    def scrape_trending_memes(self, count: int = 20) -> List[Dict]:
+        """
+        Simulate scraping trending TikTok memes
+        In production, this would use TikTok API or web scraping
+        """
+        meme_templates = [
+            {"name": "Distracted Boyfriend", "category": "reaction", "virality": 0.95},
+            {"name": "Woman Yelling at Cat", "category": "reaction", "virality": 0.92},
+            {"name": "Drake Hotline", "category": "reaction", "virality": 0.90},
+            {"name": "Two Buttons", "category": "choice", "virality": 0.88},
+            {"name": "Change My Mind", "category": "opinion", "virality": 0.85},
+            {"name": "Surprised Pikachu", "category": "reaction", "virality": 0.93},
+            {"name": "Expanding Brain", "category": "comparison", "virality": 0.87},
+            {"name": "Is This a Pigeon", "category": "misunderstanding", "virality": 0.82},
+            {"name": "Roll Safe", "category": "thinking", "virality": 0.89},
+            {"name": "Hide the Pain Harold", "category": "reaction", "virality": 0.84},
+            {"name": "Disaster Girl", "category": "reaction", "virality": 0.91},
+            {"name": "Leonardo DiCaprio Cheers", "category": "celebration", "virality": 0.86},
+            {"name": "Philosoraptor", "category": "question", "virality": 0.80},
+            {"name": "Bad Luck Brian", "category": "misfortune", "virality": 0.83},
+            {"name": "Success Kid", "category": "success", "virality": 0.88},
+            {"name": "Overly Attached Girlfriend", "category": "relationship", "virality": 0.81},
+            {"name": "Scumbag Steve", "category": "behavior", "virality": 0.79},
+            {"name": "Good Guy Greg", "category": "behavior", "virality": 0.77},
+            {"name": "Socially Awkward Penguin", "category": "situation", "virality": 0.78},
+            {"name": "Confession Bear", "category": "admission", "virality": 0.76},
+        ]
+        
+        # Add some randomness to virality
+        memes = []
+        for template in meme_templates[:count]:
+            meme = template.copy()
+            meme["virality"] = min(1.0, meme["virality"] + random.uniform(-0.1, 0.1))
+            meme["scraped_at"] = datetime.now().isoformat()
+            meme["tiktok_id"] = f"tt_{random.randint(100000, 999999)}"
+            memes.append(meme)
+        
+        return memes
+    
+    def scrape_hashtags(self, count: int = 30) -> List[str]:
+        """Get trending hashtags related to memes and Bokemon"""
+        hashtags = [
+            "#meme", "#fyp", "#viral", "#trending", "#funny", "#comedy",
+            "#bokemon", "#swarm", "#cathedral", "#11_71875", "#carrier",
+            "#hypebeast", "#basketball", "#nba", "#jam", "#dunk",
+            "#trump", "#maga", "#patriot", "#freedom", "#rally",
+            "#dance", "#sports", "#culture", "#world", "#global",
+            "#deepfry", "#memeLord", "#viral", "#algorithm", "#shadowban",
+            "#grail", "#hype", "#limiteddrop", "#resell", "#flip"
+        ]
+        return random.sample(hashtags, min(count, len(hashtags)))
+    
+    def save_memes(self, memes: List[Dict]):
+        """Save scraped memes to JSON file"""
+        with open(self.memes_file, 'w') as f:
+            json.dump(memes, f, indent=2)
+    
+    def load_memes(self) -> List[Dict]:
+        """Load saved memes from JSON file"""
+        if os.path.exists(self.memes_file):
+            with open(self.memes_file, 'r') as f:
+                return json.load(f)
+        return []
+    
+    def save_trending(self, hashtags: List[str]):
+        """Save trending hashtags to JSON file"""
+        data = {
+            "hashtags": hashtags,
+            "updated_at": datetime.now().isoformat(),
+            "carrier": 11.71875
         }
-    ]
+        with open(self.trending_file, 'w') as f:
+            json.dump(data, f, indent=2)
     
-    return memes
-
-def generate_meme_seraphim(memes: List[Dict]) -> Dict:
-    """Convert meme data to Seraphim format"""
-    seraphim = {}
+    def load_trending(self) -> Dict:
+        """Load trending hashtags from JSON file"""
+        if os.path.exists(self.trending_file):
+            with open(self.trending_file, 'r') as f:
+                return json.load(f)
+        return {"hashtags": [], "updated_at": None}
     
-    for meme in memes:
-        key = meme['name'].upper().replace(' ', '_')
-        seraphim[key] = {
-            'name': meme['name'],
-            'element1': meme['type1'],
-            'element2': meme['type2'],
-            'level': 15,
-            'max_hp': 75,
-            'attack': 60,
-            'defense': 55,
-            'moves': meme['moves'],
-            'audio_pattern': meme['audio_pattern']
+    def get_meme_for_seraphim(self, seraphim_name: str) -> Optional[Dict]:
+        """Get a relevant meme for a specific Seraphim"""
+        memes = self.load_memes()
+        if not memes:
+            return None
+        
+        # Simple matching based on name keywords
+        name_lower = seraphim_name.lower()
+        for meme in memes:
+            meme_name = meme.get("name", "").lower()
+            # Check for keyword matches
+            if any(keyword in name_lower for keyword in ["trump", "maga", "patriot"]):
+                if meme.get("category") in ["opinion", "reaction"]:
+                    return meme
+            elif any(keyword in name_lower for keyword in ["meme", "elbow", "factory"]):
+                if meme.get("category") in ["reaction", "comparison"]:
+                    return meme
+            elif any(keyword in name_lower for keyword in ["bokeball", "nba", "dunk"]):
+                if meme.get("category") in ["celebration", "success"]:
+                    return meme
+        
+        # Return random meme if no match
+        return random.choice(memes) if memes else None
+    
+    def run_scrape(self) -> Dict:
+        """Run full scrape and return summary"""
+        print("[TikTok Scraper] Starting scrape...")
+        
+        memes = self.scrape_trending_memes(20)
+        self.save_memes(memes)
+        
+        hashtags = self.scrape_hashtags(30)
+        self.save_trending(hashtags)
+        
+        summary = {
+            "memes_scraped": len(memes),
+            "hashtags_found": len(hashtags),
+            "top_meme": memes[0]["name"] if memes else None,
+            "top_hashtag": hashtags[0] if hashtags else None,
+            "timestamp": datetime.now().isoformat(),
+            "carrier": 11.71875
         }
-    
-    return seraphim
+        
+        print(f"[TikTok Scraper] Scraped {summary['memes_scraped']} memes, {summary['hashtags_found']} hashtags")
+        print(f"[TikTok Scraper] Top meme: {summary['top_meme']}")
+        print(f"[TikTok Scraper] Top hashtag: {summary['top_hashtag']}")
+        
+        return summary
 
-def save_meme_data(seraphim: Dict):
-    """Save meme Seraphim to JSON file"""
-    output_path = os.path.join(os.path.dirname(__file__), 'assets', 'memes', 'meme_seraphim.json')
-    os.makedirs(os.path.dirname(output_path), exist_ok=True)
-    
-    with open(output_path, 'w') as f:
-        json.dump(seraphim, f, indent=2)
-    
-    print(f"Saved {len(seraphim)} meme Seraphim to {output_path}")
 
-def should_scrape() -> bool:
-    """Check if we should scrape (last 24 hours)"""
-    last_scrape_file = os.path.join(os.path.dirname(__file__), 'assets', 'memes', '.last_scrape')
-    
-    if not os.path.exists(last_scrape_file):
-        return True
-    
-    with open(last_scrape_file, 'r') as f:
-        last_time = datetime.fromisoformat(f.read().strip())
-    
-    return datetime.now() - last_time > timedelta(hours=24)
+def main():
+    """CLI entry point for TikTok scraper"""
+    scraper = TikTokMemeScraper()
+    summary = scraper.run_scrape()
+    print(json.dumps(summary, indent=2))
 
-def mark_scraped():
-    """Mark that we've scraped"""
-    last_scrape_file = os.path.join(os.path.dirname(__file__), 'assets', 'memes', '.last_scrape')
-    os.makedirs(os.path.dirname(last_scrape_file), exist_ok=True)
-    
-    with open(last_scrape_file, 'w') as f:
-        f.write(datetime.now().isoformat())
 
-def run_scraper():
-    """Main scraper function"""
-    if should_scrape():
-        print("Scraping TikTok for trending memes...")
-        memes = get_trending_memes()
-        seraphim = generate_meme_seraphim(memes)
-        save_meme_data(seraphim)
-        mark_scraped()
-        print("Meme scraping complete!")
-    else:
-        print("Meme data is fresh (less than 24 hours old)")
-
-if __name__ == '__main__':
-    run_scraper()
+if __name__ == "__main__":
+    main()
